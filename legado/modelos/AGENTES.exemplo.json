@@ -1,0 +1,10 @@
+{
+  "projeto_id": "PREENCHER",
+  "agentes": [
+    {"chave": "coordenacao", "nome": "Coordenação", "id": "PREENCHER_COM_ID_REAL", "prompt": "instrucoes/coordenacao.md", "modelo": "PREENCHER"},
+    {"chave": "arte", "nome": "Arte", "id": "PREENCHER_COM_ID_REAL", "prompt": "instrucoes/arte.md", "modelo": "PREENCHER"},
+    {"chave": "producao", "nome": "Produção", "id": "PREENCHER_COM_ID_REAL", "prompt": "instrucoes/producao.md", "modelo": "PREENCHER"},
+    {"chave": "revisao", "nome": "Revisão", "id": "PREENCHER_COM_ID_REAL", "prompt": "instrucoes/revisao.md", "modelo": "PREENCHER"}
+  ],
+  "publicador": {"nome": null, "id": null, "integracao": null}
+}

@@ -1,0 +1,81 @@
+{
+  "nome": "Tatu Achou Social",
+  "versao": "1.0.0",
+  "tipo": "especificacao manual; nao e importador nativo do OpenBot",
+  "contato": "Gestor do Projeto",
+  "agentes": [
+    {
+      "nome": "Gestor do Projeto",
+      "cargo": "Head de Operações e Atendimento",
+      "prompt": "agentes/01-gestor.md"
+    },
+    {
+      "nome": "Coordenador Criativo",
+      "cargo": "Diretor de Criação",
+      "prompt": "agentes/02-coordenador-criativo.md"
+    },
+    {
+      "nome": "Pesquisador de Tendências",
+      "cargo": "Social Listening & Trend Research Specialist",
+      "prompt": "agentes/03-pesquisador.md"
+    },
+    {
+      "nome": "Estrategista de Social Media e Growth",
+      "cargo": "Social Media Strategist & Growth Specialist",
+      "prompt": "agentes/04-estrategista.md"
+    },
+    {
+      "nome": "Diretor de Arte e Designer",
+      "cargo": "Senior Graphic Designer & Art Director",
+      "prompt": "agentes/05-designer.md"
+    },
+    {
+      "nome": "Diretor de Reels e Animação",
+      "cargo": "Video Director, Motion Designer & Storyteller",
+      "prompt": "agentes/06-diretor-reels.md"
+    },
+    {
+      "nome": "Copywriter",
+      "cargo": "Social Media Copywriter & Brand Voice Specialist",
+      "prompt": "agentes/07-copywriter.md"
+    },
+    {
+      "nome": "Revisor de Qualidade",
+      "cargo": "Quality Assurance & Brand Compliance Specialist",
+      "prompt": "agentes/08-revisor.md"
+    }
+  ],
+  "hierarquia": "HIERARQUIA.md",
+  "briefing": "02-gestao/briefings/operacao-conhecer-tatu.md",
+  "pastas": [
+    "01-marca/identidade-visual",
+    "01-marca/mascote",
+    "01-marca/tom-de-voz",
+    "02-gestao/briefings",
+    "02-gestao/tarefas",
+    "02-gestao/decisoes",
+    "02-gestao/aprovacoes",
+    "03-pesquisas",
+    "04-estrategia/calendario-editorial",
+    "04-estrategia/campanhas",
+    "05-design/posts",
+    "05-design/carrosseis",
+    "05-design/templates",
+    "06-reels/roteiros",
+    "06-reels/storyboards",
+    "06-reels/personagens",
+    "06-reels/cenas",
+    "06-reels/renders",
+    "07-copywriting",
+    "08-revisao",
+    "09-aprovados",
+    "10-relatorios"
+  ],
+  "estado": {
+    "agentes_instalados": false,
+    "comunicacao_testada": false,
+    "producao_de_midia_autorizada": false,
+    "video_e_voz": "indisponiveis",
+    "publicacao_autorizada": false
+  }
+}

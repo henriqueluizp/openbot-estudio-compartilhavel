@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.1.0",
+  "projeto_id": "meu-estudio",
+  "nome": "Meu estúdio de conteúdo",
+  "raiz": null,
+  "responsavel": null,
+  "estado": "setup",
+  "negocio": {
+    "marca": null,
+    "setor": null,
+    "pais": null,
+    "objetivo": null,
+    "publico": null,
+    "idioma": "pt-BR",
+    "oferta": null,
+    "fonte_de_verdade_da_oferta": null,
+    "beneficios_comprovados": [],
+    "apresentacao_da_oferta": null,
+    "cta": null,
+    "cta_unico_no_fecho": true
+  },
+  "fontes": [],
+  "formato_de_fonte": {
+    "chave": "catalogo-principal",
+    "tipo": "catalogo",
+    "referencia": null,
+    "autoria": null,
+    "uso_permitido": null,
+    "sustenta": [],
+    "nao_sustenta": [],
+    "credencial_ref": null,
+    "leitura_testada": false
+  },
+  "editorial": {
+    "tipos_de_alegacao_permitidos": [],
+    "fontes_oficiais_por_assunto": {},
+    "restricoes": [],
+    "tratamento_de_marcas_precos_e_links": "definir_no_setup",
+    "historias_ficcionais": "definir_enquadramento_no_setup",
+    "atribuicao_externa": "conforme_autoria_licenca_e_formato",
+    "max_itens_mesma_categoria_por_lote": 2,
+    "intervalo_dias_mesmo_item": null
+  },
+  "visual": {
+    "estilo": null,
+    "referencias_autorizadas": [],
+    "paleta": [],
+    "personagens": [],
+    "vozes": [],
+    "gerar_apenas_kit_do_piloto": true
+  },
+  "video": {
+    "largura": 1080,
+    "altura": 1920,
+    "fps": 30,
+    "lufs_alvo": -14,
+    "pico_maximo_dbtp": -1.5,
+    "audio_kbps": 192,
+    "remover_metadados_pessoais": true,
+    "formatos": [
+      {"id": "V", "nome": "Veredito", "duracao_min_s": 30, "duracao_max_s": 40},
+      {"id": "L", "nome": "Lista curta", "duracao_min_s": 35, "duracao_max_s": 45},
+      {"id": "H", "nome": "Historia", "duracao_min_s": 45, "duracao_max_s": 60}
+    ]
+  },
+  "ferramentas": {
+    "banco": {"dialeto": "sqlite", "localizacao": null, "prefixo": "studio_"},
+    "modelos_por_papel": {"coordenacao": null, "arte": null, "producao": null, "revisao": null},
+    "imagem": {"servico": null, "credencial_ref": null},
+    "voz": {"servico": null, "credencial_ref": null},
+    "transcricao": {"servico": null, "credencial_ref": null},
+    "render": {"motor": null, "caminho": "estudio/", "validado": false},
+    "cofre": {"mecanismo": null}
+  },
+  "operacao": {
+    "piloto_aprovado": false,
+    "referencia_aprovacao_piloto": null,
+    "moeda_controle": "USD",
+    "teto_usd_por_episodio": null,
+    "meta_aprovados_por_dia": null,
+    "tamanho_lote": 1,
+    "episodios_em_andamento_alvo": 1,
+    "concorrencia_render": 1,
+    "disco_minimo_livre_gb": null,
+    "rodadas_normais_de_revisao_final": 2,
+    "rotina": {"ativa": false, "fuso": null, "frequencia": null, "atraso_alerta_horas": 2}
+  },
+  "publicacao": {
+    "autorizada": false,
+    "autorizacao_ref": null,
+    "conta_confirmada": false,
+    "contas": [],
+    "redes": [],
+    "publicador": null,
+    "integracao": null,
+    "marcacao_midia_sintetica": "conferir_na_plataforma_na_publicacao"
+  }
+}

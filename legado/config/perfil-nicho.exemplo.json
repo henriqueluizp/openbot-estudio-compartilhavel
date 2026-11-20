@@ -1,0 +1,48 @@
+{
+  "descricao": "Exemplo de como adaptar o estúdio a um nicho. Aplicar sobre projeto.exemplo.json, preenchendo apenas os campos necessários. Substituir cada [CAMPO] pela resposta do setup. Os três tipos de fonte abaixo cobrem a maioria dos nichos: o que você oferece, o que se opina sobre o assunto e o que uma autoridade do setor afirma.",
+  "negocio": {
+    "marca": "[MARCA]",
+    "setor": "[SETOR]",
+    "pais": "[PAÍS]",
+    "publico": "[QUEM ASSISTE E EM QUE MOMENTO ESTÁ]",
+    "objetivo": "[O QUE O VÍDEO AJUDA A DECIDIR OU ENTENDER]",
+    "oferta": "[PRODUTO, SERVIÇO OU IDEIA]",
+    "cta": "[ÚNICA AÇÃO PEDIDA NO FECHO]"
+  },
+  "fontes": [
+    {
+      "chave": "catalogo-proprio",
+      "tipo": "catalogo",
+      "referencia": "[PLANILHA, API OU DOCUMENTAÇÃO DA OFERTA]",
+      "sustenta": ["itens oferecidos", "recursos e quantidades documentados"],
+      "nao_sustenta": ["eficácia ou segurança sem evidência adicional"],
+      "leitura_testada": false
+    },
+    {
+      "chave": "avaliacoes-editoriais",
+      "tipo": "opiniao",
+      "referencia": "[BASE DE AVALIAÇÕES, REVIEWS OU CURADORIA AUTORIZADA]",
+      "sustenta": ["opinião atribuída ou síntese editorial fundamentada"],
+      "nao_sustenta": ["teste pessoal inventado", "eficácia comprovada", "segurança universal"],
+      "leitura_testada": false
+    },
+    {
+      "chave": "autoridade-do-setor",
+      "tipo": "oficial",
+      "referencia": "[DOCUMENTO ATUAL DO ÓRGÃO COMPETENTE PARA O ASSUNTO]",
+      "sustenta": ["somente as orientações contidas no documento selecionado e aplicáveis ao tema"],
+      "nao_sustenta": ["recomendação comercial automática de um produto"],
+      "leitura_testada": false
+    }
+  ],
+  "editorial": {
+    "restricoes": [
+      "Definir no setup os assuntos que exigem revisão especializada e as regras vigentes aplicáveis.",
+      "Temas sensíveis do nicho (saúde, segurança, finanças, crianças) podem seguir uma política editorial mais restritiva.",
+      "Regras internas do projeto não devem ser apresentadas como texto de lei."
+    ]
+  },
+  "visual": {"estilo": "[ESTILO, EX.: PAPEL RECORTADO EM ANIMAÇÃO 2D]", "personagens": [], "vozes": []},
+  "operacao": {"piloto_aprovado": false, "rotina": {"ativa": false}},
+  "publicacao": {"autorizada": false, "conta_confirmada": false}
+}
