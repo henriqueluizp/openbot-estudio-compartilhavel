@@ -9,3 +9,5 @@ Esta pasta é uma especificação manual, não agentes instalados nem importaç�
 Guarde o histórico de pedido, objetivo, responsáveis, arquivos, etapa, revisões, aprovações e resultados disponíveis nas pastas correspondentes. Reaproveite pesquisas e materiais aprovados quando adequado. Este repositório é público: não coloque credenciais, dados confidenciais ou informações privadas nele.
 
 Rotina proposta, ajustável à capacidade: três Reels e dois carrosséis por semana, um post estático quando fizer sentido, uma pesquisa e um planejamento semanais e análise mensal. Qualidade prevalece sobre quantidade.
+
+A estrutura de trabalho numerada fica em `estudio/`. Configuração, consultas, documentação, modelos e rotinas ficam nas pastas homônimas da raiz. Consulte `LEIA-ME.md` para instalar manualmente. SQL não é necessário ao controle por arquivos.

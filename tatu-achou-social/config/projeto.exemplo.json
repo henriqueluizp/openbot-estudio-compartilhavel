@@ -1,0 +1,49 @@
+{
+  "versao": "1.1.0",
+  "marca": "Tatu Achou",
+  "site": "https://tatuachou.com",
+  "instagram": "https://instagram.com/tatuachou",
+  "mercado": "Brasil",
+  "idioma": "pt-BR",
+  "raiz_trabalho": "estudio",
+  "contato": "Gestor do Projeto",
+  "identidade_oficial_confirmada": false,
+  "publico": "Hipótese: brasileiros interessados em entretenimento e consumo inteligente",
+  "pilares": [
+    "entretenimento",
+    "universo do mascote",
+    "educação",
+    "compartilháveis",
+    "aplicativo e comunidade"
+  ],
+  "reels": {
+    "vitrine_produtos_permitida": false,
+    "formato_planejado": "9:16",
+    "resolucao_planejada": [
+      1080,
+      1920
+    ],
+    "arquivo_futuro": "MP4",
+    "entrega_atual": "roteiro e storyboard textual"
+  },
+  "ferramentas": {
+    "pesquisa_web": "não testado",
+    "imagem": "não testado",
+    "video": "indisponível: falta de chave",
+    "voz": "indisponível: falta de chave",
+    "edicao": "não testado",
+    "ffmpeg": "não testado",
+    "nodejs": "não testado",
+    "armazenamento": "não testado",
+    "mcp": "não testado",
+    "analise_instagram": "não testado",
+    "comunicacao_agentes": "não testado"
+  },
+  "estado": {
+    "agentes_instalados": false,
+    "comunicacao_testada": false,
+    "producao_midia_autorizada": false,
+    "rotina_ativa": false,
+    "publicacao_autorizada": false
+  }
+}

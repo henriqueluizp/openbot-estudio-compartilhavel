@@ -1,81 +1,140 @@
 {
   "nome": "Tatu Achou Social",
-  "versao": "1.0.0",
+  "versao": "1.1.0",
   "tipo": "especificacao manual; nao e importador nativo do OpenBot",
   "contato": "Gestor do Projeto",
   "agentes": [
     {
       "nome": "Gestor do Projeto",
       "cargo": "Head de Operações e Atendimento",
-      "prompt": "agentes/01-gestor.md"
+      "prompt": "agentes/01-gestor.md",
+      "id": "01",
+      "contato_usuario": true,
+      "responde_a": null,
+      "entrada": "Pedido do proprietário, objetivo, prazo e contexto disponível.",
+      "entrega": "Plano, tarefas com responsáveis e dependências, histórico e relatório consolidado com arquivos, estados, bloqueios e decisões de aprovação."
     },
     {
       "nome": "Coordenador Criativo",
       "cargo": "Diretor de Criação",
-      "prompt": "agentes/02-coordenador-criativo.md"
+      "prompt": "agentes/02-coordenador-criativo.md",
+      "id": "02",
+      "contato_usuario": false,
+      "responde_a": "01",
+      "entrada": "Objetivo da Estratégia, evidências da Pesquisa e briefing do Gestor.",
+      "entrega": "Conceito de campanha, direção visual e narrativa, séries recorrentes e orientações para Design, Reels e Copy."
     },
     {
       "nome": "Pesquisador de Tendências",
       "cargo": "Social Listening & Trend Research Specialist",
-      "prompt": "agentes/03-pesquisador.md"
+      "prompt": "agentes/03-pesquisador.md",
+      "id": "03",
+      "contato_usuario": false,
+      "responde_a": "01",
+      "entrada": "Pergunta de pesquisa e público definidos pelo Gestor ou Estratégia.",
+      "entrega": "Tema, referências, público-alvo, justificativa, formato recomendado, adaptação ao Tatu, URLs, data da consulta e limites de acesso para cada achado."
     },
     {
       "nome": "Estrategista de Social Media e Growth",
       "cargo": "Social Media Strategist & Growth Specialist",
-      "prompt": "agentes/04-estrategista.md"
+      "prompt": "agentes/04-estrategista.md",
+      "id": "04",
+      "contato_usuario": false,
+      "responde_a": "01",
+      "entrada": "Briefing, pesquisa com fontes e métricas realmente acessíveis.",
+      "entrega": "Calendário com data, pilar, tema, formato, objetivo, público, prioridade, responsável, indicador e hipótese de teste; análise mensal com período, base e limitações."
     },
     {
       "nome": "Diretor de Arte e Designer",
       "cargo": "Senior Graphic Designer & Art Director",
-      "prompt": "agentes/05-designer.md"
+      "prompt": "agentes/05-designer.md",
+      "id": "05",
+      "contato_usuario": false,
+      "responde_a": "01",
+      "entrada": "Conceito da Coordenação, texto do Copywriter e referências oficiais encaminhadas pelo Gestor.",
+      "entrega": "Especificação por peça ou página: composição, hierarquia, tipografia, cores, dimensões, texto, acessibilidade móvel, recursos necessários e prompts identificados como especificações."
     },
     {
       "nome": "Diretor de Reels e Animação",
       "cargo": "Video Director, Motion Designer & Storyteller",
-      "prompt": "agentes/06-diretor-reels.md"
+      "prompt": "agentes/06-diretor-reels.md",
+      "id": "06",
+      "contato_usuario": false,
+      "responde_a": "01",
+      "entrada": "Conceito aprovado para desenvolvimento, pesquisa e especificações visuais do Designer.",
+      "entrega": "Roteiro com gancho, conflito, virada e conclusão; storyboard textual com duração, enquadramento, ação, movimento, texto em tela, legendas e indicações de som. Registrar dependências visuais e bloqueio de render."
     },
     {
       "nome": "Copywriter",
       "cargo": "Social Media Copywriter & Brand Voice Specialist",
-      "prompt": "agentes/07-copywriter.md"
+      "prompt": "agentes/07-copywriter.md",
+      "id": "07",
+      "contato_usuario": false,
+      "responde_a": "01",
+      "entrada": "Objetivo, conceito, roteiro e estrutura de páginas encaminhados pela equipe.",
+      "entrega": "Títulos e textos por página, legenda complementar, CTA contextualizado e hashtags justificadas; sugestões de redação para roteiro enviadas ao Diretor de Reels."
     },
     {
       "nome": "Revisor de Qualidade",
       "cargo": "Quality Assurance & Brand Compliance Specialist",
-      "prompt": "agentes/08-revisor.md"
+      "prompt": "agentes/08-revisor.md",
+      "id": "08",
+      "contato_usuario": false,
+      "responde_a": "01",
+      "entrada": "Briefing, versão identificada, arquivos existentes, fontes e critérios de aceite.",
+      "entrega": "Parecer por versão: aprovado, aprovado com ajustes, reprovado ou bloqueado; problema, gravidade, evidência, responsável, correção e necessidade de reavaliação."
     }
   ],
   "hierarquia": "HIERARQUIA.md",
-  "briefing": "02-gestao/briefings/operacao-conhecer-tatu.md",
+  "briefing": "estudio/02-gestao/briefings/operacao-conhecer-tatu.md",
   "pastas": [
-    "01-marca/identidade-visual",
-    "01-marca/mascote",
-    "01-marca/tom-de-voz",
-    "02-gestao/briefings",
-    "02-gestao/tarefas",
-    "02-gestao/decisoes",
-    "02-gestao/aprovacoes",
-    "03-pesquisas",
-    "04-estrategia/calendario-editorial",
-    "04-estrategia/campanhas",
-    "05-design/posts",
-    "05-design/carrosseis",
-    "05-design/templates",
-    "06-reels/roteiros",
-    "06-reels/storyboards",
-    "06-reels/personagens",
-    "06-reels/cenas",
-    "06-reels/renders",
-    "07-copywriting",
-    "08-revisao",
-    "09-aprovados",
-    "10-relatorios"
+    "agentes",
+    "config",
+    "consultas",
+    "docs",
+    "estudio",
+    "modelos",
+    "rotinas",
+    "estudio/01-marca/identidade-visual",
+    "estudio/01-marca/mascote",
+    "estudio/01-marca/tom-de-voz",
+    "estudio/02-gestao/briefings",
+    "estudio/02-gestao/tarefas",
+    "estudio/02-gestao/decisoes",
+    "estudio/02-gestao/aprovacoes",
+    "estudio/03-pesquisas",
+    "estudio/04-estrategia/calendario-editorial",
+    "estudio/04-estrategia/campanhas",
+    "estudio/05-design/posts",
+    "estudio/05-design/carrosseis",
+    "estudio/05-design/templates",
+    "estudio/06-reels/roteiros",
+    "estudio/06-reels/storyboards",
+    "estudio/06-reels/personagens",
+    "estudio/06-reels/cenas",
+    "estudio/06-reels/renders",
+    "estudio/07-copywriting",
+    "estudio/08-revisao",
+    "estudio/09-aprovados",
+    "estudio/10-relatorios"
   ],
   "estado": {
     "agentes_instalados": false,
     "comunicacao_testada": false,
     "producao_de_midia_autorizada": false,
-    "video_e_voz": "indisponiveis",
+    "video_e_voz": "indisponiveis por falta de chave",
     "publicacao_autorizada": false
-  }
+  },
+  "documentos": {
+    "guia": "LEIA-ME.md",
+    "instalacao": "PROMPT_INSTALACAO.md",
+    "prompt_unico": "PROMPT_UNICO_OPENBOT.txt",
+    "principios": "MANIFESTO.md",
+    "configuracao": "config/projeto.exemplo.json",
+    "requisitos": "estudio/REQUISITOS.md",
+    "rotina": "rotinas/editorial.md",
+    "validacao": "docs/validacao.md",
+    "mapeamento": "docs/mapeamento.md"
+  },
+  "controle": "arquivos Markdown/JSON; sem banco SQL"
 }
