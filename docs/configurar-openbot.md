@@ -12,3 +12,7 @@ Configure o pacote anexado como uma equipe de oito agentes independentes. Não t
 8. Após configuração e comunicação comprovadas, encaminhe o briefing ao Gestor para iniciar os trabalhos textuais. Não gere mídia. O Reel permanece roteiro e o carrossel especificação; a campanha não está completa sem os finais obrigatórios.
 
 Uma solicitação ao Gestor inicia o fluxo. O proprietário não deve coordenar especialistas. Gastos, publicação, agendamento, contas externas, mudanças oficiais de marca e compartilhamento confidencial precisam de autorização do proprietário, consolidada pelo Gestor. A aprovação editorial não autoriza publicação.
+
+## Controle SQL opcional
+
+Leia `docs/sql.md`. Se houver executor SQLite autorizado, crie uma base dedicada em workspace privado e aplique `sql/00_schema.sql`; nunca use a base interna do OpenBot. Execute as instruções parametrizadas individualmente. Cada agente consulta seu arquivo SQL descrito no manifesto. Se não houver executor, mantenha os registros Markdown/JSON e relate SQL não conectado. Não confunda schema validado com integração instalada.

@@ -24,10 +24,10 @@ Oito especialistas para construir a marca Tatu Achou no Instagram. O Gestor do P
 | `manifesto.json` | Inventário, agentes, caminhos, hierarquia e estados |
 | `MANIFESTO.md` / `HIERARQUIA.md` | Regras editoriais, autoridade e fluxo |
 
-Não há `sql/`: a operação usa arquivos Markdown/JSON; não existe integração de banco confirmada. A equivalência é de organização e finalidade, sem copiar o motor de animação do legado.
+`sql/` contém schema e consultas SQLite para os oito papéis, custos, publicação, bloqueios e setup. O uso é opcional, em base privada dedicada: leia `docs/sql.md`. Não existe integração de banco confirmada no OpenBot.
 
 ## Limites atuais
 
 Não gerar mídia nesta operação. Vídeo e voz indisponíveis por falta de chave; não solicitar chaves no chat. Reel é roteiro/storyboard textual; carrossel é especificação por página, sem arte final. Não declarar a campanha completa enquanto seus materiais obrigatórios estiverem ausentes. Não publicar, agendar, gastar, instalar ferramentas ou conectar serviços sem a autorização correspondente. A revisão técnica de mídia permanece bloqueada.
 
-O repositório é público. Mantenha credenciais no mecanismo seguro do ambiente e dados operacionais privados fora do Git público. Versão do pacote: 1.1.0.
+O repositório é público. Mantenha credenciais no mecanismo seguro do ambiente e dados operacionais privados fora do Git público. Versão do pacote: 1.2.0.

@@ -10,4 +10,4 @@ Guarde o histórico de pedido, objetivo, responsáveis, arquivos, etapa, revisõ
 
 Rotina proposta, ajustável à capacidade: três Reels e dois carrosséis por semana, um post estático quando fizer sentido, uma pesquisa e um planejamento semanais e análise mensal. Qualidade prevalece sobre quantidade.
 
-A estrutura de trabalho numerada fica em `estudio/`. Configuração, consultas, documentação, modelos e rotinas ficam nas pastas homônimas da raiz. Consulte `LEIA-ME.md` para instalar manualmente. SQL não é necessário ao controle por arquivos.
+A estrutura de trabalho numerada fica em `estudio/`. Configuração, consultas, documentação, modelos e rotinas ficam nas pastas homônimas da raiz. Consulte `LEIA-ME.md` para instalar manualmente. O SQL opcional em `sql/` complementa os arquivos em base privada dedicada; consulte `docs/sql.md`.

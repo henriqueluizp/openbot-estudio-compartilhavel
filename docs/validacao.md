@@ -17,7 +17,7 @@ Todos os prompts incluem contexto da marca, oito papéis, protocolo de entrega, 
 
 ## Verificação local
 
-Na raiz do repositório, execute `python3 tatu-achou-social/docs/validar-pacote.py`. A verificação confere JSON, oito agentes exclusivos, caminhos, pastas, inventário, bloqueios, regras autossuficientes, sincronização do texto único e padrões comuns de credenciais. A inspeção textual complementa a busca automatizada; nenhum detector garante ausência universal de segredos.
+Na raiz do repositório, execute `python3 docs/validar-pacote.py`. A verificação confere JSON, oito agentes exclusivos, caminhos, pastas, inventário, bloqueios, regras autossuficientes, sincronização do texto único e padrões comuns de credenciais. A inspeção textual complementa a busca automatizada; nenhum detector garante ausência universal de segredos.
 
 ## Teste obrigatório no OpenBot — ainda pendente
 
@@ -30,3 +30,7 @@ Na raiz do repositório, execute `python3 tatu-achou-social/docs/validar-pacote.
 7. Teste falha de acesso a uma pasta ou mensagem: o agente deve comunicar bloqueio, sem alegar entrega. Registre evidências, limitações e procedimentos compatíveis no relatório.
 
 Um teste textual aprovado comprova apenas esse fluxo. Não comprova produção audiovisual, acesso a métricas privadas ou campanha concluída. Pacote validado não significa agentes instalados.
+
+## SQL e migração para a raiz
+
+O validador confere os 13 arquivos SQL e os vínculos dos oito agentes, gera o texto único sem legado nem arquivos locais e rejeita caminhos antigos. `python3 docs/testar-sql.py` aplica o schema duas vezes em memória, compila todas as consultas com parâmetros e verifica criação idempotente, revisão, autorização por versão/conta, invalidação após correção, bloqueio, retomada e custo desconhecido. O schema mantém mídia, vídeo e voz desativados. Testes locais não demonstram integração SQL ou publicação no OpenBot.

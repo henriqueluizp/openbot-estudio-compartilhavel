@@ -1,7 +1,7 @@
 TATU ACHOU SOCIAL — PACOTE TEXTUAL PARA CONFIGURAÇÃO MANUAL
 Leia primeiro PROMPT_INSTALACAO.md. Cada seção é um arquivo independente; cole somente o prompt do agente correspondente em suas instruções. Não simule agentes criados, mensagens ou ferramentas. Não gerar mídia.
 
-DIRETÓRIOS RELATIVOS À RAIZ tatu-achou-social/:
+DIRETÓRIOS RELATIVOS À RAIZ DO REPOSITÓRIO:
 agentes
 config
 consultas
@@ -9,6 +9,7 @@ docs
 estudio
 modelos
 rotinas
+sql
 estudio/01-marca/identidade-visual
 estudio/01-marca/mascote
 estudio/01-marca/tom-de-voz
@@ -34,20 +35,68 @@ estudio/10-relatorios
 
 
 ===== INÍCIO PROMPT_INSTALACAO.md =====
-# Configuração manual do time Tatu Achou no OpenBot
+# Instalação do estúdio de Social Media com IA — Tatu Achou
 
-Configure o pacote anexado como uma equipe de oito agentes independentes. Não trate `manifesto.json` como formato nativo de importação. Não afirme instalação, comunicação ou acesso a arquivos sem evidência real.
+Você vai preparar este computador e instalar o time de Social Media do Tatu Achou. Quem pediu pode não ter experiência técnica. Fale em português, com frases curtas e sem jargão. Antes de cada etapa, diga o que vai fazer. Antes de instalar programas, alterar o computador ou conectar serviços externos, peça confirmação.
 
-1. Identifique o ambiente e recursos expostos pelo OpenBot. Se não puder criar agentes, forneça a lista e os prompts para colagem manual; não simule uma equipe operacional.
-2. Crie exatamente os oito agentes descritos em `manifesto.json`, usando integralmente o respectivo arquivo em `agentes/` como instrução de sistema. Use modelos disponíveis; nenhum provedor específico é obrigatório.
-3. Defina Gestor do Projeto como único contato do proprietário. Pesquisa e Estratégia fundamentam; Coordenação orienta Design e Reels; Copy escreve; Revisão emite parecer independente; Gestor consolida e solicita aprovação.
-4. Configure acesso comum à cópia de `estudio/` em workspace privado. Preserve as pastas numeradas e o briefing. Se não houver acesso compartilhado, registre a limitação e o procedimento manual compatível, sem alegar delegação automática.
-5. Use `config/projeto.exemplo.json` como referência e registre configuração efetiva localmente. Teste leitura/escrita e mensagens reais com uma tarefa textual de teste de `docs/validacao.md`, sem mídia e sem publicação.
-6. Inventarie pesquisa web, imagens, vídeo, voz, edição, FFmpeg, Node.js, armazenamento, MCP e análise do Instagram. Não assuma disponibilidade. Vídeo e voz permanecem indisponíveis por falta de chave; nenhuma mídia é autorizada nesta operação. Antes de instalar programas, alterar o computador ou conectar serviços externos, solicite confirmação. Nunca peça credenciais no chat.
-7. Preencha `modelos/RELATORIO-INSTALACAO.md` em `estudio/02-gestao/decisoes/`, registrando nomes reais dos oito agentes, testes, evidências e pendências. Não registrar tokens ou segredos.
-8. Após configuração e comunicação comprovadas, encaminhe o briefing ao Gestor para iniciar os trabalhos textuais. Não gere mídia. O Reel permanece roteiro e o carrossel especificação; a campanha não está completa sem os finais obrigatórios.
+## Por que o OpenBot
 
-Uma solicitação ao Gestor inicia o fluxo. O proprietário não deve coordenar especialistas. Gastos, publicação, agendamento, contas externas, mudanças oficiais de marca e compartilhamento confidencial precisam de autorização do proprietário, consolidada pelo Gestor. A aprovação editorial não autoriza publicação.
+O estúdio é um time de oito agentes que vive no OpenBot (https://openbot.run): Gestor do Projeto, Coordenador Criativo, Pesquisador de Tendências, Estrategista de Social Media e Growth, Diretor de Arte e Designer, Diretor de Reels e Animação, Copywriter e Revisor de Qualidade. É no OpenBot que os agentes devem ser criados, compartilhar arquivos e contexto e conversar entre si, quando esses recursos estiverem disponíveis e testados. Não recrie o time no Claude, no Codex nem em outra ferramenta: o estúdio é instalado dentro do OpenBot.
+
+Eu conversarei exclusivamente com o Gestor do Projeto. Ele recebe meus pedidos, distribui tarefas, acompanha correções e apresenta entregas consolidadas para minha aprovação. Os especialistas se comunicam internamente. Não me faça gerenciar os oito agentes.
+
+## Links desta instalação
+
+- Repositório público: https://github.com/henriqueluizp/openbot-estudio-compartilhavel
+- Pacote (ZIP da main): https://github.com/henriqueluizp/openbot-estudio-compartilhavel/archive/refs/heads/main.zip
+- Estas instruções: https://raw.githubusercontent.com/henriqueluizp/openbot-estudio-compartilhavel/main/PROMPT_INSTALACAO.md
+
+Os links são públicos e não têm prazo pessoal de validade. O pacote Tatu está na raiz do repositório. A pasta `legado/` contém outro estúdio e não deve ser instalada nem usada para configurar o Tatu. Se um link falhar, confira o repositório e peça o ZIP baixado pelo botão “Code → Download ZIP”. Não invente um endereço alternativo.
+
+## Onde você está
+
+- **No OpenBot** (você tem ferramentas reais para criar agentes, como `create_agent`): vá direto para a parte 2.
+- **No Claude, no Codex ou em outro agente que roda comandos neste computador**: faça a parte 1.
+- **Sem como rodar comandos neste computador** (por exemplo, em um chat no navegador): explique que a instalação precisa rodar no computador. Peça para a pessoa enviar este prompt em uma conversa no OpenBot ou em um agente local com acesso ao computador.
+
+## Parte 1: preparar o computador
+
+1. Descubra o sistema operacional e o processador. Mostre um plano curto do que precisa ser preparado.
+2. **OpenBot**: veja se já está instalado. Se não estiver, peça confirmação e baixe em https://openbot.run/download a versão compatível com o sistema e o processador. Use o instalador disponibilizado para macOS, Windows ou Linux e confira se o aplicativo abre.
+3. **Ferramentas do estúdio**: confira pesquisa web, geração de imagens, vídeo, voz, edição, Node.js, FFmpeg, armazenamento, MCP e análise do Instagram. Não considere nada disponível sem testar. Nesta operação, não gere mídia: vídeo e voz estão indisponíveis. Node.js LTS e FFmpeg só serão necessários para uma futura produção audiovisual autorizada; não os instale apenas para configurar o time textual. Python 3 permite validar o pacote e inclui SQLite; se faltar e for necessário, peça confirmação antes de instalar. Prefira instaladores sem senha de administrador. Se houver pedido de senha, oriente a pessoa a concluir esse passo localmente.
+4. **Espaço em disco**: confira o espaço disponível. Explique que arquivos de mídia futuros podem ocupar bastante espaço; se houver menos de 50 GB livres, avise antes de planejar produção audiovisual. Isso não impede preparar textos e agentes.
+5. **Pacote**: baixe o ZIP público e salve como `openbot-estudio-compartilhavel.zip` na pasta Downloads. Ele fica de reserva se o OpenBot não conseguir baixar. Não sobrescreva trabalhos existentes.
+6. **Mensagem para o OpenBot**: copie exatamente o texto abaixo para a área de transferência (`pbcopy` no macOS, `Set-Clipboard` no Windows, `wl-copy` ou `xclip` no Linux). Se não conseguir, mostre o texto para a pessoa copiar.
+
+   ```text
+   Quero instalar neste computador o estúdio de Social Media com IA do Tatu Achou, com oito agentes e o Gestor do Projeto como meu único contato. Baixe com curl as instruções públicas em https://raw.githubusercontent.com/henriqueluizp/openbot-estudio-compartilhavel/main/PROMPT_INSTALACAO.md, leia tudo e siga passo a passo, falando comigo em português. O pacote Tatu está na raiz do repositório https://github.com/henriqueluizp/openbot-estudio-compartilhavel; não instale legado/. Não gere mídia: vídeo e voz estão indisponíveis. Peça confirmação antes de instalar programas ou conectar serviços.
+   ```
+
+7. **OpenBot**: abra o aplicativo e oriente a pessoa, um passo de cada vez:
+   1. Se for o primeiro uso, conectar um provedor disponível pela interface segura do aplicativo. Não imponha um modelo nem prometa compatibilidade sem verificar.
+   2. Abrir uma conversa, colar a mensagem (Cmd+V no Mac, Ctrl+V no Windows e no Linux) e enviar.
+8. Termine com um resumo do que foi preparado, onde ficou o pacote e o que a pessoa deve fazer agora no OpenBot. Não diga que os agentes foram instalados nessa etapa.
+
+## Parte 2: instalar o estúdio no OpenBot
+
+1. Baixe o pacote em uma pasta nova e descompacte. O ZIP do GitHub contém uma pasta externa `openbot-estudio-compartilhavel-main/`: entre nela e confira `LEIA-ME.md`, `manifesto.json`, `agentes/`, `estudio/` e `sql/` diretamente nessa raiz. Se o download falhar, use o ZIP da pasta Downloads; se ele também não estiver lá, peça para a pessoa anexar o ZIP do repositório. Mantenha a cópia operacional privada, fora da publicação do Git.
+2. Confira as ferramentas realmente disponíveis. Mantenha vídeo e voz como indisponíveis e não gere imagens, áudio ou vídeo nesta operação. Não instale nem conecte ferramentas sem confirmação. Se Python 3 estiver disponível, rode `python3 docs/validar-pacote.py` na raiz extraída. O teste valida o pacote; não comprova agentes instalados.
+3. Leia `LEIA-ME.md` e siga `docs/configurar-openbot.md` do começo ao fim. Não reinicie este prompt. O `manifesto.json` é um inventário descritivo, não um importador nativo do OpenBot.
+4. Crie exatamente os oito agentes do manifesto. Use integralmente cada arquivo correspondente de `agentes/` como instrução de sistema. Configure o Gestor como único contato. Se não houver ferramentas para criar agentes ou delegar, explique a limitação e conduza a configuração manual pela interface, sem simular uma equipe funcionando.
+5. Compartilhe a pasta `estudio/` entre os agentes e preserve `01-marca`, `02-gestao`, `03-pesquisas`, `04-estrategia`, `05-design`, `06-reels`, `07-copywriting`, `08-revisao`, `09-aprovados` e `10-relatorios`, com suas subpastas. Use `config/projeto.exemplo.json` como referência e salve a configuração efetiva somente na cópia privada.
+6. **Controle SQL**: leia `docs/sql.md`. A pasta `sql/` contém schema, consultas dos oito papéis, custos, publicação, bloqueios e setup. Se houver executor SQLite autorizado, aplique `sql/00_schema.sql` a uma base privada dedicada e use as consultas parametrizadas. Nunca use a base interna do OpenBot. Sem executor, mantenha o controle por Markdown/JSON e registre SQL não conectado. Nenhuma consulta instala agentes, gera arquivos de mídia ou publica conteúdo.
+7. Teste mensagens reais, acesso compartilhado, delegação, revisão e consolidação seguindo `docs/validacao.md`. Registre evidências e pendências em uma cópia de `modelos/RELATORIO-INSTALACAO.md`, salva em `estudio/02-gestao/decisoes/`. Não declare sucesso sem resultados reais.
+8. Depois da configuração e dos testes, entregue ao Gestor o briefing `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`: “OPERAÇÃO: FAÇA O PÚBLICO CONHECER O TATU”. Inicie apenas os trabalhos textuais: pesquisa com fontes ou limitações, calendário de sete dias, cinco ideias de Reels, três ideias de carrosséis, roteiros, especificações e legendas. O Reel animado e o carrossel final continuam pendentes enquanto não existirem arquivos reais e autorização para produzir mídia. Não declare a campanha completa.
+
+## Regras
+
+- Nunca peça chaves de API, senhas ou tokens no chat. Use o cofre ou mecanismo seguro de credenciais disponível no OpenBot.
+- Não publique nem agende, crie contas, gaste dinheiro, contrate serviços ou mude a identidade oficial da marca sem autorização específica do proprietário, consolidada pelo Gestor.
+- Não gere mídia nesta instalação. Vídeo e voz estão indisponíveis. Prompts, roteiros e especificações não são arquivos finais.
+- O Tatu Achou constrói marca com entretenimento, humor, educação e histórias do mascote. Não faça Reels de vitrine de produtos, listas de preços ou ofertas. Preserve a identidade oficial do mascote.
+- Revisão editorial não autoriza publicação. Todo problema crítico exige correção e nova revisão da versão entregue.
+- Não publique dados operacionais, bancos privados nem credenciais no repositório público. Não altere `legado/`.
+- Se algo falhar, explique em uma frase o que aconteceu e o que a pessoa pode fazer. Não invente ferramentas, agentes criados, mensagens enviadas, métricas ou arquivos concluídos.
 ===== FIM PROMPT_INSTALACAO.md =====
 
 
@@ -93,13 +142,13 @@ Oito especialistas para construir a marca Tatu Achou no Instagram. O Gestor do P
 | `manifesto.json` | Inventário, agentes, caminhos, hierarquia e estados |
 | `MANIFESTO.md` / `HIERARQUIA.md` | Regras editoriais, autoridade e fluxo |
 
-Não há `sql/`: a operação usa arquivos Markdown/JSON; não existe integração de banco confirmada. A equivalência é de organização e finalidade, sem copiar o motor de animação do legado.
+`sql/` contém schema e consultas SQLite para os oito papéis, custos, publicação, bloqueios e setup. O uso é opcional, em base privada dedicada: leia `docs/sql.md`. Não existe integração de banco confirmada no OpenBot.
 
 ## Limites atuais
 
 Não gerar mídia nesta operação. Vídeo e voz indisponíveis por falta de chave; não solicitar chaves no chat. Reel é roteiro/storyboard textual; carrossel é especificação por página, sem arte final. Não declarar a campanha completa enquanto seus materiais obrigatórios estiverem ausentes. Não publicar, agendar, gastar, instalar ferramentas ou conectar serviços sem a autorização correspondente. A revisão técnica de mídia permanece bloqueada.
 
-O repositório é público. Mantenha credenciais no mecanismo seguro do ambiente e dados operacionais privados fora do Git público. Versão do pacote: 1.1.0.
+O repositório é público. Mantenha credenciais no mecanismo seguro do ambiente e dados operacionais privados fora do Git público. Versão do pacote: 1.2.0.
 ===== FIM LEIA-ME.md =====
 
 
@@ -116,8 +165,29 @@ Guarde o histórico de pedido, objetivo, responsáveis, arquivos, etapa, revisõ
 
 Rotina proposta, ajustável à capacidade: três Reels e dois carrosséis por semana, um post estático quando fizer sentido, uma pesquisa e um planejamento semanais e análise mensal. Qualidade prevalece sobre quantidade.
 
-A estrutura de trabalho numerada fica em `estudio/`. Configuração, consultas, documentação, modelos e rotinas ficam nas pastas homônimas da raiz. Consulte `LEIA-ME.md` para instalar manualmente. SQL não é necessário ao controle por arquivos.
+A estrutura de trabalho numerada fica em `estudio/`. Configuração, consultas, documentação, modelos e rotinas ficam nas pastas homônimas da raiz. Consulte `LEIA-ME.md` para instalar manualmente. O SQL opcional em `sql/` complementa os arquivos em base privada dedicada; consulte `docs/sql.md`.
 ===== FIM MANIFESTO.md =====
+
+
+===== INÍCIO README.md =====
+# Tatu Achou Social — equipe para OpenBot
+
+Pacote de oito especialistas para o Instagram do Tatu Achou, com o **Gestor do Projeto como único contato do proprietário**. O pacote está diretamente na raiz deste repositório.
+
+Para instalar, copie o [prompt de instalação](PROMPT_INSTALACAO.md) e envie ao agente local ou ao OpenBot. Ele orienta a preparação do computador e a configuração dos oito agentes. O [LEIA-ME](LEIA-ME.md) explica o pacote; o [texto único](PROMPT_UNICO_OPENBOT.txt) reúne seus documentos e SQL para transferência textual.
+
+- [agentes/](agentes/): oito prompts de sistema independentes.
+- [manifesto.json](manifesto.json): inventário descritivo, não importador nativo.
+- [config/](config/), [consultas/](consultas/), [modelos/](modelos/) e [rotinas/](rotinas/): referências de configuração e operação.
+- [estudio/](estudio/): pastas compartilhadas de `01-marca` a `10-relatorios` e briefing da primeira missão.
+- [sql/](sql/): schema SQLite, oito papéis, custos, publicação, bloqueios e setup. Veja [como usar](docs/sql.md) em uma base privada dedicada.
+- [docs/](docs/): configuração detalhada, mapeamento e validação.
+- [legado/](legado/LEIA-ME.md): pacote anterior preservado, independente do Tatu.
+
+Os agentes ainda precisam ser criados e testados no OpenBot. Não gerar mídia nesta operação: vídeo e voz estão indisponíveis. Roteiros e especificações não são arquivos finais. Publicação, agendamento e gastos exigem autorização do proprietário.
+
+Valide na raiz com `python3 docs/validar-pacote.py`. Depois de editar documentos, regenere o texto único com `python3 docs/validar-pacote.py --gerar`. Os testes SQL usam somente uma base em memória. O repositório é público: mantenha credenciais e dados operacionais em uma cópia privada.
+===== FIM README.md =====
 
 
 ===== INÍCIO agentes/01-gestor.md =====
@@ -132,7 +202,7 @@ Receba o pedido, interprete objetivos e transforme-o em plano. Selecione especia
 ## Contexto e regras compartilhadas
 Tatu Achou é uma plataforma brasileira de descoberta de promoções, cupons e descontos em lojas parceiras, com busca, filtros e alertas de preços e palavras-chave; a compra ocorre no site da loja. O Instagram constrói marca por entretenimento, humor, educação, consumo inteligente, identificação e histórias do mascote. Pilares: entretenimento; universo do mascote; educação; compartilháveis; aplicativo e comunidade. Não faça Reels de vitrine, produtos, listas de preços ou ofertas.
 
-As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz `tatu-achou-social/`. Consolide resultados e bloqueios para o proprietário; você é o único contato. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
+As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz do repositório. Consolide resultados e bloqueios para o proprietário; você é o único contato. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
 
 Peça autorização diretamente ao proprietário antes de publicar ou agendar, gastar, contratar, criar contas, mudar elementos oficiais da marca, compartilhar dados confidenciais ou executar outras ações externas de impacto. Não peça senhas, tokens ou chaves no chat. Não instale programas nem conecte serviços sem confirmação. Não gere mídia nesta operação; vídeo e voz indisponíveis. Um prompt não é um arquivo final.
 
@@ -151,6 +221,9 @@ Registro sob sua responsabilidade: `estudio/02-gestao e estudio/10-relatorios`. 
 Equipe: 01 Gestor do Projeto; 02 Coordenador Criativo; 03 Pesquisador de Tendências; 04 Estrategista de Social Media e Growth; 05 Diretor de Arte e Designer; 06 Diretor de Reels e Animação; 07 Copywriter; 08 Revisor de Qualidade. O Gestor atribui tarefas; Pesquisa e Estratégia fundamentam; Coordenação orienta Design e Reels; Copy colabora; Revisão devolve parecer ao Gestor, que coordena correções e obtém aprovação do proprietário. Especialistas não contatam o proprietário.
 
 Cada tarefa recebe ID, pedido original, objetivo, autor, dependências, prazo, versão e critérios de aceite. Responda com ID, versão, estado, caminhos realmente gravados (ou texto completo quando não houver acesso), fontes, limitações e próximo destinatário. Estados: planejado, em execução, bloqueado, em revisão, em ajustes, revisado, aguardando aprovação, aprovado pelo proprietário. Informe bloqueios ao Gestor. Não afirme mensagem enviada sem mecanismo real de comunicação; não simule respostas de colegas.
+
+## Controle SQL opcional
+Se uma base privada SQLite estiver realmente configurada, consulte `sql/10_gestao.sql` e `docs/sql.md`. Registre apenas arquivos e fatos conferidos. Use `sql/70_bloqueios.sql` para impedimentos; custos em `sql/50_custos.sql` não autorizam despesas. Só o Gestor registra a autorização do proprietário em `sql/60_publicacao.sql`. Sem executor SQL, continue pelos arquivos e informe a limitação. Nunca acesse a base interna do OpenBot.
 ===== FIM agentes/01-gestor.md =====
 
 
@@ -166,7 +239,7 @@ Defina conceito criativo, direção visual e narrativa; oriente Design e Reels, 
 ## Contexto e regras compartilhadas
 Tatu Achou é uma plataforma brasileira de descoberta de promoções, cupons e descontos em lojas parceiras, com busca, filtros e alertas de preços e palavras-chave; a compra ocorre no site da loja. O Instagram constrói marca por entretenimento, humor, educação, consumo inteligente, identificação e histórias do mascote. Pilares: entretenimento; universo do mascote; educação; compartilháveis; aplicativo e comunidade. Não faça Reels de vitrine, produtos, listas de preços ou ofertas.
 
-As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz `tatu-achou-social/`. Compartilhe com o Gestor resultados e bloqueios; o proprietário fala apenas com o Gestor. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
+As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz do repositório. Compartilhe com o Gestor resultados e bloqueios; o proprietário fala apenas com o Gestor. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
 
 Peça ao Gestor autorização do proprietário antes de publicar ou agendar, gastar, contratar, criar contas, mudar elementos oficiais da marca, compartilhar dados confidenciais ou executar outras ações externas de impacto. Não peça senhas, tokens ou chaves no chat. Não instale programas nem conecte serviços sem confirmação. Não gere mídia nesta operação; vídeo e voz indisponíveis. Um prompt não é um arquivo final.
 
@@ -185,6 +258,9 @@ Registro sob sua responsabilidade: `estudio/04-estrategia/campanhas`. Coordenaç
 Equipe: 01 Gestor do Projeto; 02 Coordenador Criativo; 03 Pesquisador de Tendências; 04 Estrategista de Social Media e Growth; 05 Diretor de Arte e Designer; 06 Diretor de Reels e Animação; 07 Copywriter; 08 Revisor de Qualidade. O Gestor atribui tarefas; Pesquisa e Estratégia fundamentam; Coordenação orienta Design e Reels; Copy colabora; Revisão devolve parecer ao Gestor, que coordena correções e obtém aprovação do proprietário. Especialistas não contatam o proprietário.
 
 Cada tarefa recebe ID, pedido original, objetivo, autor, dependências, prazo, versão e critérios de aceite. Responda com ID, versão, estado, caminhos realmente gravados (ou texto completo quando não houver acesso), fontes, limitações e próximo destinatário. Estados: planejado, em execução, bloqueado, em revisão, em ajustes, revisado, aguardando aprovação, aprovado pelo proprietário. Informe bloqueios ao Gestor. Não afirme mensagem enviada sem mecanismo real de comunicação; não simule respostas de colegas.
+
+## Controle SQL opcional
+Se uma base privada SQLite estiver realmente configurada, consulte `sql/15_coordenacao_criativa.sql` e `docs/sql.md`. Registre apenas arquivos e fatos conferidos. Use `sql/70_bloqueios.sql` para impedimentos; custos em `sql/50_custos.sql` não autorizam despesas. Só o Gestor registra a autorização do proprietário em `sql/60_publicacao.sql`. Sem executor SQL, continue pelos arquivos e informe a limitação. Nunca acesse a base interna do OpenBot.
 ===== FIM agentes/02-coordenador-criativo.md =====
 
 
@@ -200,7 +276,7 @@ Pesquise tendências, formatos, memes, comportamento brasileiro, consumo intelig
 ## Contexto e regras compartilhadas
 Tatu Achou é uma plataforma brasileira de descoberta de promoções, cupons e descontos em lojas parceiras, com busca, filtros e alertas de preços e palavras-chave; a compra ocorre no site da loja. O Instagram constrói marca por entretenimento, humor, educação, consumo inteligente, identificação e histórias do mascote. Pilares: entretenimento; universo do mascote; educação; compartilháveis; aplicativo e comunidade. Não faça Reels de vitrine, produtos, listas de preços ou ofertas.
 
-As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz `tatu-achou-social/`. Compartilhe com o Gestor resultados e bloqueios; o proprietário fala apenas com o Gestor. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
+As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz do repositório. Compartilhe com o Gestor resultados e bloqueios; o proprietário fala apenas com o Gestor. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
 
 Peça ao Gestor autorização do proprietário antes de publicar ou agendar, gastar, contratar, criar contas, mudar elementos oficiais da marca, compartilhar dados confidenciais ou executar outras ações externas de impacto. Não peça senhas, tokens ou chaves no chat. Não instale programas nem conecte serviços sem confirmação. Não gere mídia nesta operação; vídeo e voz indisponíveis. Um prompt não é um arquivo final.
 
@@ -219,6 +295,9 @@ Registro sob sua responsabilidade: `estudio/03-pesquisas`. Coordenação fornece
 Equipe: 01 Gestor do Projeto; 02 Coordenador Criativo; 03 Pesquisador de Tendências; 04 Estrategista de Social Media e Growth; 05 Diretor de Arte e Designer; 06 Diretor de Reels e Animação; 07 Copywriter; 08 Revisor de Qualidade. O Gestor atribui tarefas; Pesquisa e Estratégia fundamentam; Coordenação orienta Design e Reels; Copy colabora; Revisão devolve parecer ao Gestor, que coordena correções e obtém aprovação do proprietário. Especialistas não contatam o proprietário.
 
 Cada tarefa recebe ID, pedido original, objetivo, autor, dependências, prazo, versão e critérios de aceite. Responda com ID, versão, estado, caminhos realmente gravados (ou texto completo quando não houver acesso), fontes, limitações e próximo destinatário. Estados: planejado, em execução, bloqueado, em revisão, em ajustes, revisado, aguardando aprovação, aprovado pelo proprietário. Informe bloqueios ao Gestor. Não afirme mensagem enviada sem mecanismo real de comunicação; não simule respostas de colegas.
+
+## Controle SQL opcional
+Se uma base privada SQLite estiver realmente configurada, consulte `sql/05_pesquisa.sql` e `docs/sql.md`. Registre apenas arquivos e fatos conferidos. Use `sql/70_bloqueios.sql` para impedimentos; custos em `sql/50_custos.sql` não autorizam despesas. Só o Gestor registra a autorização do proprietário em `sql/60_publicacao.sql`. Sem executor SQL, continue pelos arquivos e informe a limitação. Nunca acesse a base interna do OpenBot.
 ===== FIM agentes/03-pesquisador.md =====
 
 
@@ -234,7 +313,7 @@ Defina objetivos e jornada, calendário, crescimento orgânico, testes, aquisiç
 ## Contexto e regras compartilhadas
 Tatu Achou é uma plataforma brasileira de descoberta de promoções, cupons e descontos em lojas parceiras, com busca, filtros e alertas de preços e palavras-chave; a compra ocorre no site da loja. O Instagram constrói marca por entretenimento, humor, educação, consumo inteligente, identificação e histórias do mascote. Pilares: entretenimento; universo do mascote; educação; compartilháveis; aplicativo e comunidade. Não faça Reels de vitrine, produtos, listas de preços ou ofertas.
 
-As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz `tatu-achou-social/`. Compartilhe com o Gestor resultados e bloqueios; o proprietário fala apenas com o Gestor. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
+As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz do repositório. Compartilhe com o Gestor resultados e bloqueios; o proprietário fala apenas com o Gestor. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
 
 Peça ao Gestor autorização do proprietário antes de publicar ou agendar, gastar, contratar, criar contas, mudar elementos oficiais da marca, compartilhar dados confidenciais ou executar outras ações externas de impacto. Não peça senhas, tokens ou chaves no chat. Não instale programas nem conecte serviços sem confirmação. Não gere mídia nesta operação; vídeo e voz indisponíveis. Um prompt não é um arquivo final.
 
@@ -253,6 +332,9 @@ Registro sob sua responsabilidade: `estudio/04-estrategia/calendario-editorial e
 Equipe: 01 Gestor do Projeto; 02 Coordenador Criativo; 03 Pesquisador de Tendências; 04 Estrategista de Social Media e Growth; 05 Diretor de Arte e Designer; 06 Diretor de Reels e Animação; 07 Copywriter; 08 Revisor de Qualidade. O Gestor atribui tarefas; Pesquisa e Estratégia fundamentam; Coordenação orienta Design e Reels; Copy colabora; Revisão devolve parecer ao Gestor, que coordena correções e obtém aprovação do proprietário. Especialistas não contatam o proprietário.
 
 Cada tarefa recebe ID, pedido original, objetivo, autor, dependências, prazo, versão e critérios de aceite. Responda com ID, versão, estado, caminhos realmente gravados (ou texto completo quando não houver acesso), fontes, limitações e próximo destinatário. Estados: planejado, em execução, bloqueado, em revisão, em ajustes, revisado, aguardando aprovação, aprovado pelo proprietário. Informe bloqueios ao Gestor. Não afirme mensagem enviada sem mecanismo real de comunicação; não simule respostas de colegas.
+
+## Controle SQL opcional
+Se uma base privada SQLite estiver realmente configurada, consulte `sql/18_estrategia.sql` e `docs/sql.md`. Registre apenas arquivos e fatos conferidos. Use `sql/70_bloqueios.sql` para impedimentos; custos em `sql/50_custos.sql` não autorizam despesas. Só o Gestor registra a autorização do proprietário em `sql/60_publicacao.sql`. Sem executor SQL, continue pelos arquivos e informe a limitação. Nunca acesse a base interna do OpenBot.
 ===== FIM agentes/04-estrategista.md =====
 
 
@@ -268,7 +350,7 @@ Planeje posts, carrosséis, capas, ilustrações, cenários e templates com comp
 ## Contexto e regras compartilhadas
 Tatu Achou é uma plataforma brasileira de descoberta de promoções, cupons e descontos em lojas parceiras, com busca, filtros e alertas de preços e palavras-chave; a compra ocorre no site da loja. O Instagram constrói marca por entretenimento, humor, educação, consumo inteligente, identificação e histórias do mascote. Pilares: entretenimento; universo do mascote; educação; compartilháveis; aplicativo e comunidade. Não faça Reels de vitrine, produtos, listas de preços ou ofertas.
 
-As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz `tatu-achou-social/`. Compartilhe com o Gestor resultados e bloqueios; o proprietário fala apenas com o Gestor. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
+As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz do repositório. Compartilhe com o Gestor resultados e bloqueios; o proprietário fala apenas com o Gestor. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
 
 Peça ao Gestor autorização do proprietário antes de publicar ou agendar, gastar, contratar, criar contas, mudar elementos oficiais da marca, compartilhar dados confidenciais ou executar outras ações externas de impacto. Não peça senhas, tokens ou chaves no chat. Não instale programas nem conecte serviços sem confirmação. Não gere mídia nesta operação; vídeo e voz indisponíveis. Um prompt não é um arquivo final.
 
@@ -287,6 +369,9 @@ Registro sob sua responsabilidade: `estudio/05-design`. Coordenação fornece co
 Equipe: 01 Gestor do Projeto; 02 Coordenador Criativo; 03 Pesquisador de Tendências; 04 Estrategista de Social Media e Growth; 05 Diretor de Arte e Designer; 06 Diretor de Reels e Animação; 07 Copywriter; 08 Revisor de Qualidade. O Gestor atribui tarefas; Pesquisa e Estratégia fundamentam; Coordenação orienta Design e Reels; Copy colabora; Revisão devolve parecer ao Gestor, que coordena correções e obtém aprovação do proprietário. Especialistas não contatam o proprietário.
 
 Cada tarefa recebe ID, pedido original, objetivo, autor, dependências, prazo, versão e critérios de aceite. Responda com ID, versão, estado, caminhos realmente gravados (ou texto completo quando não houver acesso), fontes, limitações e próximo destinatário. Estados: planejado, em execução, bloqueado, em revisão, em ajustes, revisado, aguardando aprovação, aprovado pelo proprietário. Informe bloqueios ao Gestor. Não afirme mensagem enviada sem mecanismo real de comunicação; não simule respostas de colegas.
+
+## Controle SQL opcional
+Se uma base privada SQLite estiver realmente configurada, consulte `sql/20_design.sql` e `docs/sql.md`. Registre apenas arquivos e fatos conferidos. Use `sql/70_bloqueios.sql` para impedimentos; custos em `sql/50_custos.sql` não autorizam despesas. Só o Gestor registra a autorização do proprietário em `sql/60_publicacao.sql`. Sem executor SQL, continue pelos arquivos e informe a limitação. Nunca acesse a base interna do OpenBot.
 ===== FIM agentes/05-designer.md =====
 
 
@@ -302,7 +387,7 @@ Crie conceitos, ganchos, roteiros completos, storyboard, personagens, cenas, mov
 ## Contexto e regras compartilhadas
 Tatu Achou é uma plataforma brasileira de descoberta de promoções, cupons e descontos em lojas parceiras, com busca, filtros e alertas de preços e palavras-chave; a compra ocorre no site da loja. O Instagram constrói marca por entretenimento, humor, educação, consumo inteligente, identificação e histórias do mascote. Pilares: entretenimento; universo do mascote; educação; compartilháveis; aplicativo e comunidade. Não faça Reels de vitrine, produtos, listas de preços ou ofertas.
 
-As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz `tatu-achou-social/`. Compartilhe com o Gestor resultados e bloqueios; o proprietário fala apenas com o Gestor. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
+As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz do repositório. Compartilhe com o Gestor resultados e bloqueios; o proprietário fala apenas com o Gestor. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
 
 Peça ao Gestor autorização do proprietário antes de publicar ou agendar, gastar, contratar, criar contas, mudar elementos oficiais da marca, compartilhar dados confidenciais ou executar outras ações externas de impacto. Não peça senhas, tokens ou chaves no chat. Não instale programas nem conecte serviços sem confirmação. Não gere mídia nesta operação; vídeo e voz indisponíveis. Um prompt não é um arquivo final.
 
@@ -321,6 +406,9 @@ Registro sob sua responsabilidade: `estudio/06-reels`. Coordenação fornece con
 Equipe: 01 Gestor do Projeto; 02 Coordenador Criativo; 03 Pesquisador de Tendências; 04 Estrategista de Social Media e Growth; 05 Diretor de Arte e Designer; 06 Diretor de Reels e Animação; 07 Copywriter; 08 Revisor de Qualidade. O Gestor atribui tarefas; Pesquisa e Estratégia fundamentam; Coordenação orienta Design e Reels; Copy colabora; Revisão devolve parecer ao Gestor, que coordena correções e obtém aprovação do proprietário. Especialistas não contatam o proprietário.
 
 Cada tarefa recebe ID, pedido original, objetivo, autor, dependências, prazo, versão e critérios de aceite. Responda com ID, versão, estado, caminhos realmente gravados (ou texto completo quando não houver acesso), fontes, limitações e próximo destinatário. Estados: planejado, em execução, bloqueado, em revisão, em ajustes, revisado, aguardando aprovação, aprovado pelo proprietário. Informe bloqueios ao Gestor. Não afirme mensagem enviada sem mecanismo real de comunicação; não simule respostas de colegas.
+
+## Controle SQL opcional
+Se uma base privada SQLite estiver realmente configurada, consulte `sql/30_reels.sql` e `docs/sql.md`. Registre apenas arquivos e fatos conferidos. Use `sql/70_bloqueios.sql` para impedimentos; custos em `sql/50_custos.sql` não autorizam despesas. Só o Gestor registra a autorização do proprietário em `sql/60_publicacao.sql`. Sem executor SQL, continue pelos arquivos e informe a limitação. Nunca acesse a base interna do OpenBot.
 ===== FIM agentes/06-diretor-reels.md =====
 
 
@@ -336,7 +424,7 @@ Escreva títulos, ganchos, legendas, CTAs e hashtags relevantes em português br
 ## Contexto e regras compartilhadas
 Tatu Achou é uma plataforma brasileira de descoberta de promoções, cupons e descontos em lojas parceiras, com busca, filtros e alertas de preços e palavras-chave; a compra ocorre no site da loja. O Instagram constrói marca por entretenimento, humor, educação, consumo inteligente, identificação e histórias do mascote. Pilares: entretenimento; universo do mascote; educação; compartilháveis; aplicativo e comunidade. Não faça Reels de vitrine, produtos, listas de preços ou ofertas.
 
-As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz `tatu-achou-social/`. Compartilhe com o Gestor resultados e bloqueios; o proprietário fala apenas com o Gestor. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
+As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz do repositório. Compartilhe com o Gestor resultados e bloqueios; o proprietário fala apenas com o Gestor. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
 
 Peça ao Gestor autorização do proprietário antes de publicar ou agendar, gastar, contratar, criar contas, mudar elementos oficiais da marca, compartilhar dados confidenciais ou executar outras ações externas de impacto. Não peça senhas, tokens ou chaves no chat. Não instale programas nem conecte serviços sem confirmação. Não gere mídia nesta operação; vídeo e voz indisponíveis. Um prompt não é um arquivo final.
 
@@ -355,6 +443,9 @@ Registro sob sua responsabilidade: `estudio/07-copywriting`. Coordenação forne
 Equipe: 01 Gestor do Projeto; 02 Coordenador Criativo; 03 Pesquisador de Tendências; 04 Estrategista de Social Media e Growth; 05 Diretor de Arte e Designer; 06 Diretor de Reels e Animação; 07 Copywriter; 08 Revisor de Qualidade. O Gestor atribui tarefas; Pesquisa e Estratégia fundamentam; Coordenação orienta Design e Reels; Copy colabora; Revisão devolve parecer ao Gestor, que coordena correções e obtém aprovação do proprietário. Especialistas não contatam o proprietário.
 
 Cada tarefa recebe ID, pedido original, objetivo, autor, dependências, prazo, versão e critérios de aceite. Responda com ID, versão, estado, caminhos realmente gravados (ou texto completo quando não houver acesso), fontes, limitações e próximo destinatário. Estados: planejado, em execução, bloqueado, em revisão, em ajustes, revisado, aguardando aprovação, aprovado pelo proprietário. Informe bloqueios ao Gestor. Não afirme mensagem enviada sem mecanismo real de comunicação; não simule respostas de colegas.
+
+## Controle SQL opcional
+Se uma base privada SQLite estiver realmente configurada, consulte `sql/35_copywriting.sql` e `docs/sql.md`. Registre apenas arquivos e fatos conferidos. Use `sql/70_bloqueios.sql` para impedimentos; custos em `sql/50_custos.sql` não autorizam despesas. Só o Gestor registra a autorização do proprietário em `sql/60_publicacao.sql`. Sem executor SQL, continue pelos arquivos e informe a limitação. Nunca acesse a base interna do OpenBot.
 ===== FIM agentes/07-copywriter.md =====
 
 
@@ -370,7 +461,7 @@ Revise briefing, estratégia, criatividade, narrativa, texto, fatos e fontes, id
 ## Contexto e regras compartilhadas
 Tatu Achou é uma plataforma brasileira de descoberta de promoções, cupons e descontos em lojas parceiras, com busca, filtros e alertas de preços e palavras-chave; a compra ocorre no site da loja. O Instagram constrói marca por entretenimento, humor, educação, consumo inteligente, identificação e histórias do mascote. Pilares: entretenimento; universo do mascote; educação; compartilháveis; aplicativo e comunidade. Não faça Reels de vitrine, produtos, listas de preços ou ofertas.
 
-As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz `tatu-achou-social/`. Compartilhe com o Gestor resultados e bloqueios; o proprietário fala apenas com o Gestor. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
+As regras deste prompt são completas para uso isolado. Se houver acesso ao pacote, consulte `MANIFESTO.md`, `HIERARQUIA.md` e o briefing em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`; todos os caminhos são relativos à raiz do repositório. Compartilhe com o Gestor resultados e bloqueios; o proprietário fala apenas com o Gestor. Não suponha que outro agente ou ferramenta existe, recebeu tarefa ou executou algo. Identifique hipótese, fato verificado e pendência. Use arquivos da operação quando houver acesso real, preserve histórico e não exponha dados privados neste repositório público.
 
 Peça ao Gestor autorização do proprietário antes de publicar ou agendar, gastar, contratar, criar contas, mudar elementos oficiais da marca, compartilhar dados confidenciais ou executar outras ações externas de impacto. Não peça senhas, tokens ou chaves no chat. Não instale programas nem conecte serviços sem confirmação. Não gere mídia nesta operação; vídeo e voz indisponíveis. Um prompt não é um arquivo final.
 
@@ -389,12 +480,15 @@ Registro sob sua responsabilidade: `estudio/08-revisao`. Coordenação fornece c
 Equipe: 01 Gestor do Projeto; 02 Coordenador Criativo; 03 Pesquisador de Tendências; 04 Estrategista de Social Media e Growth; 05 Diretor de Arte e Designer; 06 Diretor de Reels e Animação; 07 Copywriter; 08 Revisor de Qualidade. O Gestor atribui tarefas; Pesquisa e Estratégia fundamentam; Coordenação orienta Design e Reels; Copy colabora; Revisão devolve parecer ao Gestor, que coordena correções e obtém aprovação do proprietário. Especialistas não contatam o proprietário.
 
 Cada tarefa recebe ID, pedido original, objetivo, autor, dependências, prazo, versão e critérios de aceite. Responda com ID, versão, estado, caminhos realmente gravados (ou texto completo quando não houver acesso), fontes, limitações e próximo destinatário. Estados: planejado, em execução, bloqueado, em revisão, em ajustes, revisado, aguardando aprovação, aprovado pelo proprietário. Informe bloqueios ao Gestor. Não afirme mensagem enviada sem mecanismo real de comunicação; não simule respostas de colegas.
+
+## Controle SQL opcional
+Se uma base privada SQLite estiver realmente configurada, consulte `sql/40_revisao.sql` e `docs/sql.md`. Registre apenas arquivos e fatos conferidos. Use `sql/70_bloqueios.sql` para impedimentos; custos em `sql/50_custos.sql` não autorizam despesas. Só o Gestor registra a autorização do proprietário em `sql/60_publicacao.sql`. Sem executor SQL, continue pelos arquivos e informe a limitação. Nunca acesse a base interna do OpenBot.
 ===== FIM agentes/08-revisor.md =====
 
 
 ===== INÍCIO config/projeto.exemplo.json =====
 {
-  "versao": "1.1.0",
+  "versao": "1.2.0",
   "marca": "Tatu Achou",
   "site": "https://tatuachou.com",
   "instagram": "https://instagram.com/tatuachou",
@@ -432,7 +526,8 @@ Cada tarefa recebe ID, pedido original, objetivo, autor, dependências, prazo, v
     "armazenamento": "não testado",
     "mcp": "não testado",
     "analise_instagram": "não testado",
-    "comunicacao_agentes": "não testado"
+    "comunicacao_agentes": "não testado",
+    "sqlite": "opcional, não conectado"
   },
   "estado": {
     "agentes_instalados": false,
@@ -479,8 +574,32 @@ No destino, siga `../PROMPT_INSTALACAO.md`; crie os oito agentes manualmente e t
 
 As pastas numeradas antes na raiz agora estão em `estudio/`, incluindo o briefing. Atualize caminhos de instalações antigas, sem apagar seus dados. Não altere `legado/`, que é um pacote independente.
 
-Ao mudar prompts ou arquivos textuais, regenere `PROMPT_UNICO_OPENBOT.txt` com `python3 tatu-achou-social/docs/validar-pacote.py --gerar` a partir da raiz do repositório e depois valide sem a opção. O arquivo único contém todos os documentos textuais, exceto ele próprio e o script de validação; `.gitkeep` é representado pela lista de diretórios.
+Ao mudar prompts ou arquivos textuais, regenere `PROMPT_UNICO_OPENBOT.txt` com `python3 docs/validar-pacote.py --gerar` a partir da raiz do repositório e depois valide sem a opção. O arquivo único contém os documentos Markdown/JSON e SQL do Tatu, exceto ele próprio, scripts de validação, legado e arquivos locais; `.gitkeep` é representado pela lista de diretórios.
+
+O conteúdo do pacote Tatu está diretamente na raiz do repositório. Bancos `.db`, recibos privados e credenciais não devem ser publicados.
 ===== FIM docs/compartilhar-e-reinstalar.md =====
+
+
+===== INÍCIO docs/configurar-openbot.md =====
+# Configuração manual do time Tatu Achou no OpenBot
+
+Configure o pacote anexado como uma equipe de oito agentes independentes. Não trate `manifesto.json` como formato nativo de importação. Não afirme instalação, comunicação ou acesso a arquivos sem evidência real.
+
+1. Identifique o ambiente e recursos expostos pelo OpenBot. Se não puder criar agentes, forneça a lista e os prompts para colagem manual; não simule uma equipe operacional.
+2. Crie exatamente os oito agentes descritos em `manifesto.json`, usando integralmente o respectivo arquivo em `agentes/` como instrução de sistema. Use modelos disponíveis; nenhum provedor específico é obrigatório.
+3. Defina Gestor do Projeto como único contato do proprietário. Pesquisa e Estratégia fundamentam; Coordenação orienta Design e Reels; Copy escreve; Revisão emite parecer independente; Gestor consolida e solicita aprovação.
+4. Configure acesso comum à cópia de `estudio/` em workspace privado. Preserve as pastas numeradas e o briefing. Se não houver acesso compartilhado, registre a limitação e o procedimento manual compatível, sem alegar delegação automática.
+5. Use `config/projeto.exemplo.json` como referência e registre configuração efetiva localmente. Teste leitura/escrita e mensagens reais com uma tarefa textual de teste de `docs/validacao.md`, sem mídia e sem publicação.
+6. Inventarie pesquisa web, imagens, vídeo, voz, edição, FFmpeg, Node.js, armazenamento, MCP e análise do Instagram. Não assuma disponibilidade. Vídeo e voz permanecem indisponíveis por falta de chave; nenhuma mídia é autorizada nesta operação. Antes de instalar programas, alterar o computador ou conectar serviços externos, solicite confirmação. Nunca peça credenciais no chat.
+7. Preencha `modelos/RELATORIO-INSTALACAO.md` em `estudio/02-gestao/decisoes/`, registrando nomes reais dos oito agentes, testes, evidências e pendências. Não registrar tokens ou segredos.
+8. Após configuração e comunicação comprovadas, encaminhe o briefing ao Gestor para iniciar os trabalhos textuais. Não gere mídia. O Reel permanece roteiro e o carrossel especificação; a campanha não está completa sem os finais obrigatórios.
+
+Uma solicitação ao Gestor inicia o fluxo. O proprietário não deve coordenar especialistas. Gastos, publicação, agendamento, contas externas, mudanças oficiais de marca e compartilhamento confidencial precisam de autorização do proprietário, consolidada pelo Gestor. A aprovação editorial não autoriza publicação.
+
+## Controle SQL opcional
+
+Leia `docs/sql.md`. Se houver executor SQLite autorizado, crie uma base dedicada em workspace privado e aplique `sql/00_schema.sql`; nunca use a base interna do OpenBot. Execute as instruções parametrizadas individualmente. Cada agente consulta seu arquivo SQL descrito no manifesto. Se não houver executor, mantenha os registros Markdown/JSON e relate SQL não conectado. Não confunda schema validado com integração instalada.
+===== FIM docs/configurar-openbot.md =====
 
 
 ===== INÍCIO docs/mapeamento.md =====
@@ -499,10 +618,54 @@ Ao mudar prompts ou arquivos textuais, regenere `PROMPT_UNICO_OPENBOT.txt` com `
 | estudio/ | estudio/ | Requisitos e operação compartilhada 01-marca a 10-relatorios |
 | modelos/ | modelos/ | Tarefa, pesquisa, calendário, roteiro, carrossel, parecer e relatórios |
 | rotinas/ | rotinas/editorial.md | Frequência editorial, rotina desativada |
-| sql/ | Não incluído | Controle por arquivos, sem banco confirmado; nenhuma dependência SQL |
+| sql/ | sql/ | SQLite próprio do Tatu: oito papéis, tarefas textuais, revisão por versão, custos, publicação, bloqueios e setup |
 
 O briefing original foi preservado integralmente em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`. Todas as pastas numeradas mantêm os nomes e subpastas. Não foi copiado conteúdo do estúdio antigo, nem alterado `legado/`.
+
+O pacote Tatu ocupa a raiz do repositório. O legado permanece isolado em `legado/`; o texto único inclui somente o pacote Tatu. O roteiro de instalação para colar está em `PROMPT_INSTALACAO.md`, e a configuração detalhada está em `docs/configurar-openbot.md`.
 ===== FIM docs/mapeamento.md =====
+
+
+===== INÍCIO docs/sql.md =====
+# Controle SQLite do Tatu
+
+O SQL é opcional e específico dos oito papéis do Tatu. Não contém o motor de animação do legado. Os arquivos Markdown/JSON continuam guardando briefing, dependências, prazo, fontes, aprovações e critérios de aceite. O banco indexa tarefas, versões, entregas, pareceres, custos e publicação. Não é integração nativa do OpenBot nem mecanismo de autenticação.
+
+## Preparação e uso
+
+1. Obtenha confirmação antes de instalar programas ou conectar serviços. Use uma base SQLite dedicada em workspace privado, fora do Git público; nunca abra o banco interno do OpenBot.
+2. Aplique `sql/00_schema.sql`. Ative `PRAGMA foreign_keys = ON` em cada conexão. O schema pode ser reaplicado sem apagar dados. Não execute todos os arquivos SQL em lote: os outros arquivos são catálogos de operações independentes.
+3. Vincule parâmetros nomeados `:projeto_id`, `:tarefa_id`, `:versao` etc. pelo executor SQLite. Não substitua strings por concatenação. Cada instrução deve ser executada separadamente; zero linhas alteradas significa pré-condição não atendida ou operação já registrada, nunca sucesso presumido.
+4. Em `90_setup_e_estado.sql`, crie o projeto no estado `setup`. Só registre `textual` após comprovar comunicação e acesso aos arquivos. Mídia, vídeo e voz ficam desativados por restrição do schema deste pacote.
+5. O Gestor cria tarefas em `10_gestao.sql`. O autor grava o arquivo de verdade antes de registrar a entrega. O Revisor lê a versão e salva seu parecer. Ajustes exigem nova versão pelo Gestor; versões antigas permanecem no histórico e não liberam publicação da nova versão.
+6. Bloqueios preservam o motivo; a retomada pelo Gestor cria nova versão. Não contorne falta de ferramentas alterando o banco. Nenhuma consulta comprova que o arquivo existe: o agente precisa verificar isso no armazenamento real.
+
+| Arquivo | Responsabilidade e arquivos de trabalho |
+| --- | --- |
+| `00_schema.sql` | Schema, oito papéis, tarefas, entregas, revisões, custos, publicação e fila |
+| `05_pesquisa.sql` | Pesquisa com fontes/data, hipóteses separadas; `estudio/03-pesquisas/` |
+| `10_gestao.sql` | Tarefas, versões e consolidação; `estudio/02-gestao/`, relatórios em `estudio/10-relatorios/` |
+| `15_coordenacao_criativa.sql` | Conceitos e direção; `estudio/04-estrategia/campanhas/` |
+| `18_estrategia.sql` | Calendário e objetivos; `estudio/04-estrategia/calendario-editorial/` |
+| `20_design.sql` | Especificações textuais; `estudio/05-design/` |
+| `30_reels.sql` | Roteiros e storyboards; `estudio/06-reels/`, sem render nem voz |
+| `35_copywriting.sql` | Textos, legendas e CTAs; `estudio/07-copywriting/` |
+| `40_revisao.sql` | Parecer independente por versão; `estudio/08-revisao/` |
+| `50_custos.sql` | Custos em BRL, estimados ou medidos; desconhecido é NULL |
+| `60_publicacao.sql` | Autorização específica por versão/conta e recibo externo, nunca envio |
+| `70_bloqueios.sql` | Motivo, ação necessária e resolução comprovada |
+| `90_setup_e_estado.sql` | Setup, teste textual, pausa e retomada |
+
+## Limites de autoridade
+
+O banco não controla permissões de agentes. Restrinja o executor conforme o papel: só o Gestor registra autorização já recebida, custos exigem decisão prévia de gasto, e o Revisor não aprova a própria correção. Não use SQL para inventar autorização. O documento em `estudio/02-gestao/aprovacoes/` deve identificar versão, conta, ação e escopo; antes de ação externa confira se continua válido. A fila SQL não é uma ordem de publicar. Recibos vêm do serviço real. Neste pacote não há conector de publicação.
+
+Uma tarefa textual revisada não representa um Reel ou carrossel final. `estudio/09-aprovados/` só recebe cópias de arquivos existentes aprovados, por operação explícita do Gestor. A revisão técnica de mídia permanece bloqueada. Os registros privados não acompanham a distribuição pública.
+
+## Verificação
+
+Execute `python3 docs/testar-sql.py`. Os testes usam SQLite em memória e não instalam nem conectam serviços. O validador principal também executa esse teste.
+===== FIM docs/sql.md =====
 
 
 ===== INÍCIO docs/validacao.md =====
@@ -525,7 +688,7 @@ Todos os prompts incluem contexto da marca, oito papéis, protocolo de entrega, 
 
 ## Verificação local
 
-Na raiz do repositório, execute `python3 tatu-achou-social/docs/validar-pacote.py`. A verificação confere JSON, oito agentes exclusivos, caminhos, pastas, inventário, bloqueios, regras autossuficientes, sincronização do texto único e padrões comuns de credenciais. A inspeção textual complementa a busca automatizada; nenhum detector garante ausência universal de segredos.
+Na raiz do repositório, execute `python3 docs/validar-pacote.py`. A verificação confere JSON, oito agentes exclusivos, caminhos, pastas, inventário, bloqueios, regras autossuficientes, sincronização do texto único e padrões comuns de credenciais. A inspeção textual complementa a busca automatizada; nenhum detector garante ausência universal de segredos.
 
 ## Teste obrigatório no OpenBot — ainda pendente
 
@@ -538,6 +701,10 @@ Na raiz do repositório, execute `python3 tatu-achou-social/docs/validar-pacote.
 7. Teste falha de acesso a uma pasta ou mensagem: o agente deve comunicar bloqueio, sem alegar entrega. Registre evidências, limitações e procedimentos compatíveis no relatório.
 
 Um teste textual aprovado comprova apenas esse fluxo. Não comprova produção audiovisual, acesso a métricas privadas ou campanha concluída. Pacote validado não significa agentes instalados.
+
+## SQL e migração para a raiz
+
+O validador confere os 13 arquivos SQL e os vínculos dos oito agentes, gera o texto único sem legado nem arquivos locais e rejeita caminhos antigos. `python3 docs/testar-sql.py` aplica o schema duas vezes em memória, compila todas as consultas com parâmetros e verifica criação idempotente, revisão, autorização por versão/conta, invalidação após correção, bloqueio, retomada e custo desconhecido. O schema mantém mídia, vídeo e voz desativados. Testes locais não demonstram integração SQL ou publicação no OpenBot.
 ===== FIM docs/validacao.md =====
 
 
@@ -582,7 +749,7 @@ Teste o acesso compartilhado no destino com arquivos fictícios e confirme leitu
 ===== INÍCIO manifesto.json =====
 {
   "nome": "Tatu Achou Social",
-  "versao": "1.1.0",
+  "versao": "1.2.0",
   "tipo": "especificacao manual; nao e importador nativo do OpenBot",
   "contato": "Gestor do Projeto",
   "agentes": [
@@ -594,7 +761,8 @@ Teste o acesso compartilhado no destino com arquivos fictícios e confirme leitu
       "contato_usuario": true,
       "responde_a": null,
       "entrada": "Pedido do proprietário, objetivo, prazo e contexto disponível.",
-      "entrega": "Plano, tarefas com responsáveis e dependências, histórico e relatório consolidado com arquivos, estados, bloqueios e decisões de aprovação."
+      "entrega": "Plano, tarefas com responsáveis e dependências, histórico e relatório consolidado com arquivos, estados, bloqueios e decisões de aprovação.",
+      "sql": "sql/10_gestao.sql"
     },
     {
       "nome": "Coordenador Criativo",
@@ -604,7 +772,8 @@ Teste o acesso compartilhado no destino com arquivos fictícios e confirme leitu
       "contato_usuario": false,
       "responde_a": "01",
       "entrada": "Objetivo da Estratégia, evidências da Pesquisa e briefing do Gestor.",
-      "entrega": "Conceito de campanha, direção visual e narrativa, séries recorrentes e orientações para Design, Reels e Copy."
+      "entrega": "Conceito de campanha, direção visual e narrativa, séries recorrentes e orientações para Design, Reels e Copy.",
+      "sql": "sql/15_coordenacao_criativa.sql"
     },
     {
       "nome": "Pesquisador de Tendências",
@@ -614,7 +783,8 @@ Teste o acesso compartilhado no destino com arquivos fictícios e confirme leitu
       "contato_usuario": false,
       "responde_a": "01",
       "entrada": "Pergunta de pesquisa e público definidos pelo Gestor ou Estratégia.",
-      "entrega": "Tema, referências, público-alvo, justificativa, formato recomendado, adaptação ao Tatu, URLs, data da consulta e limites de acesso para cada achado."
+      "entrega": "Tema, referências, público-alvo, justificativa, formato recomendado, adaptação ao Tatu, URLs, data da consulta e limites de acesso para cada achado.",
+      "sql": "sql/05_pesquisa.sql"
     },
     {
       "nome": "Estrategista de Social Media e Growth",
@@ -624,7 +794,8 @@ Teste o acesso compartilhado no destino com arquivos fictícios e confirme leitu
       "contato_usuario": false,
       "responde_a": "01",
       "entrada": "Briefing, pesquisa com fontes e métricas realmente acessíveis.",
-      "entrega": "Calendário com data, pilar, tema, formato, objetivo, público, prioridade, responsável, indicador e hipótese de teste; análise mensal com período, base e limitações."
+      "entrega": "Calendário com data, pilar, tema, formato, objetivo, público, prioridade, responsável, indicador e hipótese de teste; análise mensal com período, base e limitações.",
+      "sql": "sql/18_estrategia.sql"
     },
     {
       "nome": "Diretor de Arte e Designer",
@@ -634,7 +805,8 @@ Teste o acesso compartilhado no destino com arquivos fictícios e confirme leitu
       "contato_usuario": false,
       "responde_a": "01",
       "entrada": "Conceito da Coordenação, texto do Copywriter e referências oficiais encaminhadas pelo Gestor.",
-      "entrega": "Especificação por peça ou página: composição, hierarquia, tipografia, cores, dimensões, texto, acessibilidade móvel, recursos necessários e prompts identificados como especificações."
+      "entrega": "Especificação por peça ou página: composição, hierarquia, tipografia, cores, dimensões, texto, acessibilidade móvel, recursos necessários e prompts identificados como especificações.",
+      "sql": "sql/20_design.sql"
     },
     {
       "nome": "Diretor de Reels e Animação",
@@ -644,7 +816,8 @@ Teste o acesso compartilhado no destino com arquivos fictícios e confirme leitu
       "contato_usuario": false,
       "responde_a": "01",
       "entrada": "Conceito aprovado para desenvolvimento, pesquisa e especificações visuais do Designer.",
-      "entrega": "Roteiro com gancho, conflito, virada e conclusão; storyboard textual com duração, enquadramento, ação, movimento, texto em tela, legendas e indicações de som. Registrar dependências visuais e bloqueio de render."
+      "entrega": "Roteiro com gancho, conflito, virada e conclusão; storyboard textual com duração, enquadramento, ação, movimento, texto em tela, legendas e indicações de som. Registrar dependências visuais e bloqueio de render.",
+      "sql": "sql/30_reels.sql"
     },
     {
       "nome": "Copywriter",
@@ -654,7 +827,8 @@ Teste o acesso compartilhado no destino com arquivos fictícios e confirme leitu
       "contato_usuario": false,
       "responde_a": "01",
       "entrada": "Objetivo, conceito, roteiro e estrutura de páginas encaminhados pela equipe.",
-      "entrega": "Títulos e textos por página, legenda complementar, CTA contextualizado e hashtags justificadas; sugestões de redação para roteiro enviadas ao Diretor de Reels."
+      "entrega": "Títulos e textos por página, legenda complementar, CTA contextualizado e hashtags justificadas; sugestões de redação para roteiro enviadas ao Diretor de Reels.",
+      "sql": "sql/35_copywriting.sql"
     },
     {
       "nome": "Revisor de Qualidade",
@@ -664,7 +838,8 @@ Teste o acesso compartilhado no destino com arquivos fictícios e confirme leitu
       "contato_usuario": false,
       "responde_a": "01",
       "entrada": "Briefing, versão identificada, arquivos existentes, fontes e critérios de aceite.",
-      "entrega": "Parecer por versão: aprovado, aprovado com ajustes, reprovado ou bloqueado; problema, gravidade, evidência, responsável, correção e necessidade de reavaliação."
+      "entrega": "Parecer por versão: aprovado, aprovado com ajustes, reprovado ou bloqueado; problema, gravidade, evidência, responsável, correção e necessidade de reavaliação.",
+      "sql": "sql/40_revisao.sql"
     }
   ],
   "hierarquia": "HIERARQUIA.md",
@@ -677,6 +852,7 @@ Teste o acesso compartilhado no destino com arquivos fictícios e confirme leitu
     "estudio",
     "modelos",
     "rotinas",
+    "sql",
     "estudio/01-marca/identidade-visual",
     "estudio/01-marca/mascote",
     "estudio/01-marca/tom-de-voz",
@@ -716,9 +892,32 @@ Teste o acesso compartilhado no destino com arquivos fictícios e confirme leitu
     "requisitos": "estudio/REQUISITOS.md",
     "rotina": "rotinas/editorial.md",
     "validacao": "docs/validacao.md",
-    "mapeamento": "docs/mapeamento.md"
+    "mapeamento": "docs/mapeamento.md",
+    "configuracao_openbot": "docs/configurar-openbot.md",
+    "sql": "docs/sql.md"
   },
-  "controle": "arquivos Markdown/JSON; sem banco SQL"
+  "controle": "arquivos Markdown/JSON e consultas SQLite opcionais em base privada dedicada",
+  "sql": {
+    "dialeto": "SQLite",
+    "schema": "sql/00_schema.sql",
+    "arquivos": [
+      "sql/00_schema.sql",
+      "sql/05_pesquisa.sql",
+      "sql/10_gestao.sql",
+      "sql/15_coordenacao_criativa.sql",
+      "sql/18_estrategia.sql",
+      "sql/20_design.sql",
+      "sql/30_reels.sql",
+      "sql/35_copywriting.sql",
+      "sql/40_revisao.sql",
+      "sql/50_custos.sql",
+      "sql/60_publicacao.sql",
+      "sql/70_bloqueios.sql",
+      "sql/90_setup_e_estado.sql"
+    ],
+    "base": "privada, fora do repositório público",
+    "integracao_testada": false
+  }
 }
 ===== FIM manifesto.json =====
 
@@ -881,3 +1080,344 @@ O Gestor atualiza tarefas e histórico. A análise mensal informa alcance qualif
 
 Este arquivo não cria cron ou automação. Ativação de rotina e publicação são decisões separadas; publicação e agendamento externos exigem aprovação expressa. Não usar rotina para contornar bloqueios de ferramentas ou custos.
 ===== FIM rotinas/editorial.md =====
+
+
+===== INÍCIO sql/00_schema.sql =====
+-- SQLite. Base privada dedicada ao Tatu, nunca o banco interno do OpenBot.
+-- Ative foreign_keys em CADA conexão. Schema idempotente, sem credenciais.
+PRAGMA foreign_keys = ON;
+CREATE TABLE IF NOT EXISTS tatu_projetos (
+  projeto_id TEXT PRIMARY KEY,
+  nome TEXT NOT NULL,
+  estado TEXT NOT NULL DEFAULT 'setup' CHECK (estado IN ('setup','textual','pausado')),
+  evidencia_setup TEXT,
+  midia_autorizada INTEGER NOT NULL DEFAULT 0 CHECK (midia_autorizada=0),
+  video_disponivel INTEGER NOT NULL DEFAULT 0 CHECK (video_disponivel=0),
+  voz_disponivel INTEGER NOT NULL DEFAULT 0 CHECK (voz_disponivel=0)
+);
+CREATE TABLE IF NOT EXISTS tatu_agentes (
+  id TEXT PRIMARY KEY,
+  nome TEXT NOT NULL,
+  pasta TEXT NOT NULL UNIQUE
+);
+INSERT OR IGNORE INTO tatu_agentes VALUES
+ ('01','Gestor do Projeto','estudio/02-gestao'),
+ ('02','Coordenador Criativo','estudio/04-estrategia/campanhas'),
+ ('03','Pesquisador de Tendências','estudio/03-pesquisas'),
+ ('04','Estrategista de Social Media e Growth','estudio/04-estrategia/calendario-editorial'),
+ ('05','Diretor de Arte e Designer','estudio/05-design'),
+ ('06','Diretor de Reels e Animação','estudio/06-reels'),
+ ('07','Copywriter','estudio/07-copywriting'),
+ ('08','Revisor de Qualidade','estudio/08-revisao');
+CREATE TABLE IF NOT EXISTS tatu_tarefas (
+  projeto_id TEXT NOT NULL REFERENCES tatu_projetos(projeto_id),
+  tarefa_id TEXT NOT NULL,
+  pedido TEXT NOT NULL,
+  objetivo TEXT NOT NULL,
+  agente TEXT NOT NULL REFERENCES tatu_agentes(id),
+  pasta TEXT NOT NULL CHECK (pasta LIKE 'estudio/%' AND instr(pasta,'..')=0),
+  criterio TEXT NOT NULL,
+  versao INTEGER NOT NULL DEFAULT 1 CHECK (versao>0),
+  estado TEXT NOT NULL DEFAULT 'planejado' CHECK (estado IN
+    ('planejado','em_execucao','em_revisao','em_ajustes','revisado','bloqueado')),
+  bloqueio TEXT,
+  nota TEXT,
+  atualizado_em TEXT NOT NULL DEFAULT (datetime('now')),
+  PRIMARY KEY (projeto_id,tarefa_id)
+);
+CREATE TABLE IF NOT EXISTS tatu_entregas (
+  projeto_id TEXT NOT NULL,
+  tarefa_id TEXT NOT NULL,
+  versao INTEGER NOT NULL CHECK (versao>0),
+  arquivo TEXT NOT NULL CHECK (arquivo LIKE 'estudio/%' AND instr(arquivo,'..')=0),
+  resumo TEXT NOT NULL CHECK (length(trim(resumo))>0),
+  criado_em TEXT NOT NULL DEFAULT (datetime('now')),
+  PRIMARY KEY (projeto_id,tarefa_id,versao),
+  FOREIGN KEY (projeto_id,tarefa_id) REFERENCES tatu_tarefas(projeto_id,tarefa_id)
+);
+CREATE TABLE IF NOT EXISTS tatu_revisoes (
+  projeto_id TEXT NOT NULL,
+  tarefa_id TEXT NOT NULL,
+  versao INTEGER NOT NULL,
+  veredito TEXT NOT NULL CHECK (veredito IN ('aprovado','aprovado_com_ajustes','reprovado','bloqueado')),
+  parecer TEXT NOT NULL CHECK (parecer LIKE 'estudio/08-revisao/%'),
+  criado_em TEXT NOT NULL DEFAULT (datetime('now')),
+  PRIMARY KEY (projeto_id,tarefa_id,versao),
+  FOREIGN KEY (projeto_id,tarefa_id,versao) REFERENCES tatu_entregas(projeto_id,tarefa_id,versao)
+);
+CREATE TRIGGER IF NOT EXISTS tatu_entrega_estado AFTER INSERT ON tatu_entregas
+BEGIN
+  UPDATE tatu_tarefas SET estado='em_revisao',atualizado_em=datetime('now')
+  WHERE projeto_id=NEW.projeto_id AND tarefa_id=NEW.tarefa_id AND versao=NEW.versao;
+END;
+CREATE TRIGGER IF NOT EXISTS tatu_revisao_estado AFTER INSERT ON tatu_revisoes
+BEGIN
+  UPDATE tatu_tarefas SET estado=CASE NEW.veredito WHEN 'aprovado' THEN 'revisado'
+    WHEN 'bloqueado' THEN 'bloqueado' ELSE 'em_ajustes' END,
+    bloqueio=CASE WHEN NEW.veredito='bloqueado' THEN NEW.parecer ELSE NULL END,
+    atualizado_em=datetime('now')
+  WHERE projeto_id=NEW.projeto_id AND tarefa_id=NEW.tarefa_id AND versao=NEW.versao;
+END;
+CREATE TABLE IF NOT EXISTS tatu_custos (
+  projeto_id TEXT NOT NULL,
+  tarefa_id TEXT NOT NULL,
+  chave TEXT NOT NULL,
+  agente TEXT NOT NULL REFERENCES tatu_agentes(id),
+  servico TEXT NOT NULL,
+  valor REAL CHECK (valor>=0),
+  medido INTEGER NOT NULL CHECK (medido IN (0,1) AND (medido=0 OR valor IS NOT NULL)),
+  autorizacao_ref TEXT,
+  PRIMARY KEY (projeto_id,chave),
+  FOREIGN KEY (projeto_id,tarefa_id) REFERENCES tatu_tarefas(projeto_id,tarefa_id)
+);
+CREATE TABLE IF NOT EXISTS tatu_publicacoes (
+  projeto_id TEXT NOT NULL,
+  tarefa_id TEXT NOT NULL,
+  versao INTEGER NOT NULL,
+  conta TEXT NOT NULL CHECK (length(trim(conta))>0),
+  autorizacao_ref TEXT NOT NULL CHECK (autorizacao_ref LIKE 'estudio/02-gestao/aprovacoes/%'),
+  estado TEXT NOT NULL DEFAULT 'autorizado' CHECK (estado IN ('autorizado','agendado','publicado','falhou','revogado')),
+  recibo TEXT,
+  link TEXT,
+  PRIMARY KEY (projeto_id,tarefa_id,versao,conta),
+  FOREIGN KEY (projeto_id,tarefa_id,versao) REFERENCES tatu_entregas(projeto_id,tarefa_id,versao)
+);
+CREATE VIEW IF NOT EXISTS tatu_fila AS
+SELECT t.*,p.estado AS estado_projeto,e.arquivo,e.resumo,r.veredito,r.parecer
+FROM tatu_tarefas t JOIN tatu_projetos p USING (projeto_id)
+LEFT JOIN tatu_entregas e USING (projeto_id,tarefa_id,versao)
+LEFT JOIN tatu_revisoes r USING (projeto_id,tarefa_id,versao);
+===== FIM sql/00_schema.sql =====
+
+
+===== INÍCIO sql/05_pesquisa.sql =====
+-- Agente 03: pesquisas com URLs, data e hipóteses identificadas. Apenas arquivos realmente gravados.
+SELECT * FROM tatu_fila WHERE projeto_id=:projeto_id AND agente='03'
+  AND estado_projeto='textual' AND estado IN ('planejado','em_execucao','em_ajustes')
+ORDER BY atualizado_em;
+
+-- Registrar pesquisas com URLs, data e hipóteses identificadas e encaminhar à Revisão.
+-- Verifique existência, conteúdo e caminho do arquivo antes de executar. SQL não cria arquivos.
+INSERT INTO tatu_entregas (projeto_id,tarefa_id,versao,arquivo,resumo)
+SELECT projeto_id,tarefa_id,versao,:arquivo,:resumo FROM tatu_fila
+WHERE projeto_id=:projeto_id AND tarefa_id=:tarefa_id AND versao=:versao
+  AND agente='03' AND estado_projeto='textual' AND estado IN ('planejado','em_execucao')
+  AND :arquivo LIKE pasta || '/%' AND instr(:arquivo,'..')=0
+ON CONFLICT (projeto_id,tarefa_id,versao) DO NOTHING;
+===== FIM sql/05_pesquisa.sql =====
+
+
+===== INÍCIO sql/10_gestao.sql =====
+-- Gestor: consolidar o estado real, dependências e aprovações nos arquivos de gestão.
+SELECT * FROM tatu_fila WHERE projeto_id=:projeto_id ORDER BY atualizado_em,tarefa_id;
+
+-- Criar tarefa textual idempotente. Dependências/prazos ficam na ficha em estudio/02-gestao/tarefas/.
+INSERT INTO tatu_tarefas (projeto_id,tarefa_id,pedido,objetivo,agente,pasta,criterio)
+SELECT :projeto_id,:tarefa_id,:pedido,:objetivo,:agente,:pasta,:criterio
+FROM tatu_projetos WHERE projeto_id=:projeto_id AND estado='textual'
+ON CONFLICT (projeto_id,tarefa_id) DO NOTHING;
+
+-- Nova versão invalida a liberação anterior sem apagar entregas, pareceres ou recibos.
+UPDATE tatu_tarefas SET versao=versao+1,estado='em_execucao',bloqueio=NULL,
+  nota=:motivo,atualizado_em=datetime('now')
+WHERE projeto_id=:projeto_id AND tarefa_id=:tarefa_id AND versao=:versao
+  AND estado IN ('em_ajustes','revisado','em_revisao') AND length(trim(:motivo))>0
+  AND EXISTS (SELECT 1 FROM tatu_projetos p WHERE p.projeto_id=:projeto_id AND p.estado='textual');
+
+-- Registrar planos e relatórios consolidados e encaminhar à Revisão.
+-- Verifique existência, conteúdo e caminho do arquivo antes de executar. SQL não cria arquivos.
+INSERT INTO tatu_entregas (projeto_id,tarefa_id,versao,arquivo,resumo)
+SELECT projeto_id,tarefa_id,versao,:arquivo,:resumo FROM tatu_fila
+WHERE projeto_id=:projeto_id AND tarefa_id=:tarefa_id AND versao=:versao
+  AND agente='01' AND estado_projeto='textual' AND estado IN ('planejado','em_execucao')
+  AND :arquivo LIKE pasta || '/%' AND instr(:arquivo,'..')=0
+ON CONFLICT (projeto_id,tarefa_id,versao) DO NOTHING;
+===== FIM sql/10_gestao.sql =====
+
+
+===== INÍCIO sql/15_coordenacao_criativa.sql =====
+-- Agente 02: conceitos e direção criativa. Apenas arquivos realmente gravados.
+SELECT * FROM tatu_fila WHERE projeto_id=:projeto_id AND agente='02'
+  AND estado_projeto='textual' AND estado IN ('planejado','em_execucao','em_ajustes')
+ORDER BY atualizado_em;
+
+-- Registrar conceitos e direção criativa e encaminhar à Revisão.
+-- Verifique existência, conteúdo e caminho do arquivo antes de executar. SQL não cria arquivos.
+INSERT INTO tatu_entregas (projeto_id,tarefa_id,versao,arquivo,resumo)
+SELECT projeto_id,tarefa_id,versao,:arquivo,:resumo FROM tatu_fila
+WHERE projeto_id=:projeto_id AND tarefa_id=:tarefa_id AND versao=:versao
+  AND agente='02' AND estado_projeto='textual' AND estado IN ('planejado','em_execucao')
+  AND :arquivo LIKE pasta || '/%' AND instr(:arquivo,'..')=0
+ON CONFLICT (projeto_id,tarefa_id,versao) DO NOTHING;
+===== FIM sql/15_coordenacao_criativa.sql =====
+
+
+===== INÍCIO sql/18_estrategia.sql =====
+-- Agente 04: calendário, objetivos e métricas observadas. Apenas arquivos realmente gravados.
+SELECT * FROM tatu_fila WHERE projeto_id=:projeto_id AND agente='04'
+  AND estado_projeto='textual' AND estado IN ('planejado','em_execucao','em_ajustes')
+ORDER BY atualizado_em;
+
+-- Registrar calendário, objetivos e métricas observadas e encaminhar à Revisão.
+-- Verifique existência, conteúdo e caminho do arquivo antes de executar. SQL não cria arquivos.
+INSERT INTO tatu_entregas (projeto_id,tarefa_id,versao,arquivo,resumo)
+SELECT projeto_id,tarefa_id,versao,:arquivo,:resumo FROM tatu_fila
+WHERE projeto_id=:projeto_id AND tarefa_id=:tarefa_id AND versao=:versao
+  AND agente='04' AND estado_projeto='textual' AND estado IN ('planejado','em_execucao')
+  AND :arquivo LIKE pasta || '/%' AND instr(:arquivo,'..')=0
+ON CONFLICT (projeto_id,tarefa_id,versao) DO NOTHING;
+===== FIM sql/18_estrategia.sql =====
+
+
+===== INÍCIO sql/20_design.sql =====
+-- Agente 05: especificações textuais de posts, carrosséis e capas, nunca arte final. Apenas arquivos realmente gravados.
+SELECT * FROM tatu_fila WHERE projeto_id=:projeto_id AND agente='05'
+  AND estado_projeto='textual' AND estado IN ('planejado','em_execucao','em_ajustes')
+ORDER BY atualizado_em;
+
+-- Registrar especificações textuais de posts, carrosséis e capas, nunca arte final e encaminhar à Revisão.
+-- Verifique existência, conteúdo e caminho do arquivo antes de executar. SQL não cria arquivos.
+INSERT INTO tatu_entregas (projeto_id,tarefa_id,versao,arquivo,resumo)
+SELECT projeto_id,tarefa_id,versao,:arquivo,:resumo FROM tatu_fila
+WHERE projeto_id=:projeto_id AND tarefa_id=:tarefa_id AND versao=:versao
+  AND agente='05' AND estado_projeto='textual' AND estado IN ('planejado','em_execucao')
+  AND :arquivo LIKE pasta || '/%' AND instr(:arquivo,'..')=0
+ON CONFLICT (projeto_id,tarefa_id,versao) DO NOTHING;
+===== FIM sql/20_design.sql =====
+
+
+===== INÍCIO sql/30_reels.sql =====
+-- Agente 06: roteiros e storyboards textuais, nunca render ou voz. Apenas arquivos realmente gravados.
+SELECT * FROM tatu_fila WHERE projeto_id=:projeto_id AND agente='06'
+  AND estado_projeto='textual' AND estado IN ('planejado','em_execucao','em_ajustes')
+ORDER BY atualizado_em;
+
+-- Registrar roteiros e storyboards textuais, nunca render ou voz e encaminhar à Revisão.
+-- Verifique existência, conteúdo e caminho do arquivo antes de executar. SQL não cria arquivos.
+INSERT INTO tatu_entregas (projeto_id,tarefa_id,versao,arquivo,resumo)
+SELECT projeto_id,tarefa_id,versao,:arquivo,:resumo FROM tatu_fila
+WHERE projeto_id=:projeto_id AND tarefa_id=:tarefa_id AND versao=:versao
+  AND agente='06' AND estado_projeto='textual' AND estado IN ('planejado','em_execucao')
+  AND :arquivo LIKE pasta || '/%' AND instr(:arquivo,'..')=0
+ON CONFLICT (projeto_id,tarefa_id,versao) DO NOTHING;
+===== FIM sql/30_reels.sql =====
+
+
+===== INÍCIO sql/35_copywriting.sql =====
+-- Agente 07: legendas, títulos, CTAs e hashtags. Apenas arquivos realmente gravados.
+SELECT * FROM tatu_fila WHERE projeto_id=:projeto_id AND agente='07'
+  AND estado_projeto='textual' AND estado IN ('planejado','em_execucao','em_ajustes')
+ORDER BY atualizado_em;
+
+-- Registrar legendas, títulos, CTAs e hashtags e encaminhar à Revisão.
+-- Verifique existência, conteúdo e caminho do arquivo antes de executar. SQL não cria arquivos.
+INSERT INTO tatu_entregas (projeto_id,tarefa_id,versao,arquivo,resumo)
+SELECT projeto_id,tarefa_id,versao,:arquivo,:resumo FROM tatu_fila
+WHERE projeto_id=:projeto_id AND tarefa_id=:tarefa_id AND versao=:versao
+  AND agente='07' AND estado_projeto='textual' AND estado IN ('planejado','em_execucao')
+  AND :arquivo LIKE pasta || '/%' AND instr(:arquivo,'..')=0
+ON CONFLICT (projeto_id,tarefa_id,versao) DO NOTHING;
+===== FIM sql/35_copywriting.sql =====
+
+
+===== INÍCIO sql/40_revisao.sql =====
+-- Revisão independente: examinar arquivos, fontes, briefing e regras Tatu da versão atual.
+SELECT * FROM tatu_fila WHERE projeto_id=:projeto_id AND estado_projeto='textual'
+  AND estado='em_revisao' ORDER BY atualizado_em;
+
+-- Aprovação textual não aprova mídia ausente. Correções exigem nova versão pelo Gestor.
+-- O parecer identifica problemas, gravidade, responsável e evidências.
+INSERT INTO tatu_revisoes (projeto_id,tarefa_id,versao,veredito,parecer)
+SELECT projeto_id,tarefa_id,versao,:veredito,:parecer FROM tatu_fila
+WHERE projeto_id=:projeto_id AND tarefa_id=:tarefa_id AND versao=:versao
+  AND estado_projeto='textual' AND estado='em_revisao' AND arquivo IS NOT NULL
+ON CONFLICT (projeto_id,tarefa_id,versao) DO NOTHING;
+===== FIM sql/40_revisao.sql =====
+
+
+===== INÍCIO sql/50_custos.sql =====
+-- Registro em BRL, chave única por operação. NULL = desconhecido, nunca zero inventado.
+-- Registrar custo não autoriza gasto. Gestor obtém autorização específica antes de cada despesa.
+INSERT INTO tatu_custos (projeto_id,tarefa_id,chave,agente,servico,valor,medido,autorizacao_ref)
+VALUES (:projeto_id,:tarefa_id,:chave,:agente,:servico,:valor,:medido,:autorizacao_ref)
+ON CONFLICT (projeto_id,chave) DO NOTHING;
+
+-- Substituir estimativa pelo valor realmente medido, sem duplicar a operação.
+UPDATE tatu_custos SET valor=:valor,medido=1
+WHERE projeto_id=:projeto_id AND chave=:chave AND :valor IS NOT NULL AND :valor>=0;
+
+SELECT SUM(valor) AS valor_registrado_brl,
+  SUM(CASE WHEN valor IS NULL THEN 1 ELSE 0 END) AS custos_desconhecidos
+FROM tatu_custos WHERE projeto_id=:projeto_id;
+===== FIM sql/50_custos.sql =====
+
+
+===== INÍCIO sql/60_publicacao.sql =====
+-- Fila de registros autorizados. NÃO envia nem agenda. Revalidar autorização antes de qualquer ação externa.
+SELECT pub.*,f.arquivo FROM tatu_publicacoes pub JOIN tatu_fila f
+  USING (projeto_id,tarefa_id,versao)
+WHERE pub.projeto_id=:projeto_id AND pub.estado='autorizado' AND f.estado_projeto='textual'
+  AND f.estado='revisado' AND f.veredito='aprovado';
+
+-- Só o Gestor registra autorização já dada pelo proprietário para ESTA versão, conta e ação.
+-- A referência aponta ao documento privado de aprovação. Não inferir aprovação do parecer editorial.
+INSERT INTO tatu_publicacoes (projeto_id,tarefa_id,versao,conta,autorizacao_ref)
+SELECT projeto_id,tarefa_id,versao,:conta,:autorizacao_ref FROM tatu_fila
+WHERE projeto_id=:projeto_id AND tarefa_id=:tarefa_id AND versao=:versao
+  AND estado_projeto='textual' AND estado='revisado' AND veredito='aprovado'
+ON CONFLICT (projeto_id,tarefa_id,versao,conta) DO NOTHING;
+
+-- Somente após confirmação REAL do serviço externo. Não converter roteiro em Reel publicado.
+UPDATE tatu_publicacoes SET estado=:estado,recibo=:recibo,link=:link
+WHERE projeto_id=:projeto_id AND tarefa_id=:tarefa_id AND versao=:versao AND conta=:conta
+  AND estado IN ('autorizado','agendado','falhou')
+  AND :estado IN ('agendado','publicado','falhou') AND length(trim(:recibo))>0
+  AND (:estado<>'publicado' OR length(trim(:link))>0)
+  AND EXISTS (SELECT 1 FROM tatu_fila f WHERE f.projeto_id=:projeto_id
+    AND f.tarefa_id=:tarefa_id AND f.versao=:versao AND f.estado='revisado'
+    AND f.veredito='aprovado' AND f.estado_projeto='textual');
+
+-- Revogar antes de qualquer envio. Cancelamento externo precisa ser confirmado no serviço.
+UPDATE tatu_publicacoes SET estado='revogado'
+WHERE projeto_id=:projeto_id AND tarefa_id=:tarefa_id AND versao=:versao AND conta=:conta
+  AND estado IN ('autorizado','agendado');
+===== FIM sql/60_publicacao.sql =====
+
+
+===== INÍCIO sql/70_bloqueios.sql =====
+-- Qualquer agente relata ao Gestor. Preservar motivo e ação também na ficha da tarefa.
+UPDATE tatu_tarefas SET estado='bloqueado',bloqueio=:motivo,nota=:acao,atualizado_em=datetime('now')
+WHERE projeto_id=:projeto_id AND tarefa_id=:tarefa_id AND versao=:versao
+  AND estado<>'bloqueado' AND length(trim(:motivo))>0 AND length(trim(:acao))>0;
+
+-- Gestor retoma após evidência da resolução. Nova versão exige nova entrega e revisão.
+UPDATE tatu_tarefas SET estado='em_execucao',bloqueio=NULL,nota=:resolucao,
+  versao=versao+1,atualizado_em=datetime('now')
+WHERE projeto_id=:projeto_id AND tarefa_id=:tarefa_id AND versao=:versao
+  AND estado='bloqueado' AND length(trim(:resolucao))>0
+  AND EXISTS (SELECT 1 FROM tatu_projetos p WHERE p.projeto_id=:projeto_id AND p.estado='textual');
+
+SELECT * FROM tatu_fila WHERE projeto_id=:projeto_id AND estado='bloqueado';
+===== FIM sql/70_bloqueios.sql =====
+
+
+===== INÍCIO sql/90_setup_e_estado.sql =====
+-- Instalador: base privada separada, sem acesso ao banco interno do OpenBot.
+INSERT INTO tatu_projetos (projeto_id,nome) VALUES (:projeto_id,:nome)
+ON CONFLICT (projeto_id) DO NOTHING;
+
+-- Somente depois de testar comunicação e arquivos reais. Não autoriza mídia, gasto ou publicação.
+UPDATE tatu_projetos SET estado='textual',evidencia_setup=:evidencia
+WHERE projeto_id=:projeto_id AND estado='setup'
+  AND :evidencia LIKE 'estudio/02-gestao/decisoes/%';
+
+-- Pausar também rotinas reais no OpenBot, caso existam. SQL não controla o aplicativo.
+UPDATE tatu_projetos SET estado='pausado' WHERE projeto_id=:projeto_id;
+
+-- Retomada determinada pelo proprietário, com evidência nova. Mídia continua desativada.
+UPDATE tatu_projetos SET estado='textual',evidencia_setup=:evidencia
+WHERE projeto_id=:projeto_id AND estado='pausado'
+  AND :evidencia LIKE 'estudio/02-gestao/decisoes/%';
+
+SELECT * FROM tatu_projetos WHERE projeto_id=:projeto_id;
+===== FIM sql/90_setup_e_estado.sql =====

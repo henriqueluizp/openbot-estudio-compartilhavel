@@ -13,6 +13,8 @@
 | estudio/ | estudio/ | Requisitos e operação compartilhada 01-marca a 10-relatorios |
 | modelos/ | modelos/ | Tarefa, pesquisa, calendário, roteiro, carrossel, parecer e relatórios |
 | rotinas/ | rotinas/editorial.md | Frequência editorial, rotina desativada |
-| sql/ | Não incluído | Controle por arquivos, sem banco confirmado; nenhuma dependência SQL |
+| sql/ | sql/ | SQLite próprio do Tatu: oito papéis, tarefas textuais, revisão por versão, custos, publicação, bloqueios e setup |
 
 O briefing original foi preservado integralmente em `estudio/02-gestao/briefings/operacao-conhecer-tatu.md`. Todas as pastas numeradas mantêm os nomes e subpastas. Não foi copiado conteúdo do estúdio antigo, nem alterado `legado/`.
+
+O pacote Tatu ocupa a raiz do repositório. O legado permanece isolado em `legado/`; o texto único inclui somente o pacote Tatu. O roteiro de instalação para colar está em `PROMPT_INSTALACAO.md`, e a configuração detalhada está em `docs/configurar-openbot.md`.

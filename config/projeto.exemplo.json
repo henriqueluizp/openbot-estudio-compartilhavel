@@ -1,5 +1,5 @@
 {
-  "versao": "1.1.0",
+  "versao": "1.2.0",
   "marca": "Tatu Achou",
   "site": "https://tatuachou.com",
   "instagram": "https://instagram.com/tatuachou",
@@ -37,7 +37,8 @@
     "armazenamento": "não testado",
     "mcp": "não testado",
     "analise_instagram": "não testado",
-    "comunicacao_agentes": "não testado"
+    "comunicacao_agentes": "não testado",
+    "sqlite": "opcional, não conectado"
   },
   "estado": {
     "agentes_instalados": false,
